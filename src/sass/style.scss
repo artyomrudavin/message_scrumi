@@ -1,0 +1,37 @@
+@import "mixins";
+@import "var";
+@import "theme";
+
+body {
+  height: 100vh; 
+}
+
+.m_message__avatar {
+  @extend .avatar-l;
+}
+
+.m_avatar__status {
+  @extend .status;
+}
+
+.m_message__holder--off {
+  display: inline-block;
+  content: "";
+  width: 13px;
+  height: 12px;
+  background: url(../img/holder-off.png);
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.m_message__holder--on {
+  display: inline-block;
+  content: "";
+  width: 13px;
+  height: 12px;
+  background: url(../img/holder-on.png);
+  &:hover {
+    cursor: pointer;
+  }
+}
