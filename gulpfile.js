@@ -3,9 +3,9 @@ var sass = require('gulp-sass');
 var connect = require('gulp-connect');
 
 gulp.task ('sass', function () {
-  return gulp.src('./src/sass/**/*.scss')
+  return gulp.src('src/sass/**/*.scss')
   .pipe(sass({errLogToConsole: true}))
-  .pipe(gulp.dest('./build/css'));
+  .pipe(gulp.dest('build/css'));
 });
 
 gulp.task('connect', function () {
@@ -15,13 +15,13 @@ gulp.task('connect', function () {
 });
 
 gulp.task('livereload', function () {
-  gulp.src('./build/**/*')
+  gulp.src('build/**/*')
   .pipe(connect.reload());
 });
 
 gulp.task ('watch', function () {
-  gulp.watch('./src/sass/**/*.scss', ['sass']);
-  gulp.watch('./build/**/*', ['livereload']);
+  gulp.watch('src/sass/**/*.scss', ['sass']);
+  gulp.watch('build/**/*', ['livereload']);
 });
 
 gulp.task('default', ['sass', 'watch', 'connect']);

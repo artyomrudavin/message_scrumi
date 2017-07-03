@@ -368,23 +368,159 @@ button {
     height: 100%;
     border-radius: 100%; }
 
-body {
-  height: 100vh; }
+.m_wrapper {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 14vh 1fr 4vh;
+  grid-template-columns: 1fr 25vw;
+  grid-template-areas: "header header" "main aside" "footer footer"; }
+
+.m_header {
+  grid-area: header; }
+
+.m_aside {
+  grid-area: aside; }
+
+.m_main {
+  grid-area: main; }
+
+.m_footer {
+  grid-area: footer; }
+
+.m_header, .m_footer {
+  background-color: #2f332e; }
+
+.m_aside {
+  background-color: #333; }
+
+.m_main {
+  padding: 1.25rem; }
+
+.m_message {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.25rem; }
+
+.m_message__avatar--you {
+  order: 1;
+  margin-left: 1.4375rem; }
+
+.m_message__avatar--else {
+  order: 0;
+  margin-right: 1.4375rem; }
+
+.m_message__content {
+  width: 47.14vw;
+  position: relative;
+  background-color: #fff;
+  border-radius: 0.1875rem;
+  box-shadow: 0 0.0625rem 0.0625rem #cccccc; }
+  .m_message__content--else::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -0.625rem;
+    border: 0.625rem solid transparent;
+    border-top: 0.625rem solid #fff;
+    border-right: 0.625rem solid #fff; }
+  .m_message__content--you::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -0.625rem;
+    border: 0.625rem solid transparent;
+    border-left: 0.625rem solid #fff;
+    border-top: 0.625rem solid #fff; }
+
+.m_message__content__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.8125rem;
+  padding: 0 0.625rem 0 0.625rem;
+  font-size: 0.75rem;
+  color: gray;
+  border-bottom: 0.0625rem solid #cccccc; }
+
+.m_message__content__body {
+  padding: 0.625rem; }
+
+.m_message__sender, .m_message__time, .m_message__seen__number {
+  font-size: 0.75rem;
+  color: #404040; }
+
+.m_message__editer {
+  display: inline-block; }
+
+.m_content__text {
+  font-size: 0.875rem; }
 
 .m_message__holder--off {
   display: inline-block;
   content: "";
-  width: 13px;
-  height: 12px;
+  width: 0.8125rem;
+  height: 0.75rem;
+  margin-left: 0.625rem;
   background: url(../img/holder-off.png); }
   .m_message__holder--off:hover {
+    cursor: pointer; }
+
+.m_message__edit {
+  display: inline-block;
+  content: "";
+  width: 0.6875rem;
+  height: 0.6875rem;
+  margin-left: 0.625rem;
+  background: url(../img/edit.png); }
+  .m_message__edit:hover {
+    cursor: pointer; }
+
+.m_message__delete {
+  display: inline-block;
+  content: "";
+  width: 0.5625rem;
+  height: 0.6875rem;
+  margin-left: 0.625rem;
+  background: url(../img/del.png); }
+  .m_message__delete:hover {
     cursor: pointer; }
 
 .m_message__holder--on {
   display: inline-block;
   content: "";
-  width: 13px;
-  height: 12px;
+  width: 0.8125rem;
+  height: 0.75rem;
+  margin-left: 0.625rem;
   background: url(../img/holder-on.png); }
   .m_message__holder--on:hover {
+    cursor: pointer; }
+
+.m_status__plus {
+  display: inline-block;
+  content: "";
+  width: 0.9375rem;
+  height: 0.9375rem;
+  margin-right: 0.9375rem;
+  background: url(../img/plus.png); }
+  .m_status__plus:hover {
+    cursor: pointer; }
+
+.m_status__equals {
+  display: inline-block;
+  content: "";
+  width: 0.9375rem;
+  height: 0.9375rem;
+  margin-right: 0.9375rem;
+  background: url(../img/eq.png); }
+  .m_status__equals:hover {
+    cursor: pointer; }
+
+.m_status__minus {
+  display: inline-block;
+  content: "";
+  width: 0.9375rem;
+  height: 0.9375rem;
+  margin-right: 0.9375rem;
+  background: url(../img/minus.png); }
+  .m_status__minus:hover {
     cursor: pointer; }

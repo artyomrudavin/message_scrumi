@@ -13,23 +13,88 @@
 
   <div class="m_wrapper">
 
-    <div class="m_message"></div>
+    <header class="m_header">Header</header>
+    <aside class="m_aside">Aside</aside>
+    <main class="m_main">
 
-    <a href="#" class="m_message__avatar">
-      <span class="m_avatar__status"></span>
-      <img class="m_avatar_img" src="img/avatar.jpg" alt="avatar">
-    </a>
+      <div class="m_message">
 
-    <div class="m_message__content">
-      <div class="m_message__content__header">
-        <span class="m_message__sender">Inna Avanesian</span>
-        <span>в</span>
-        <span class="m_message__time">12:31</span>
-        <span class="m_message__date">17 Апрель 2017</span>
-        <span class="m_message__holder--off"></span>
+        <a href="#" class="m_message__avatar m_message__avatar--else">
+          <span class="m_avatar__status"></span>
+          <img class="m_avatar_img" src="img/avatar.jpg" alt="avatar">
+        </a>
+
+        <div class="m_message__content m_message__content--else">
+          <div class="m_message__content__header">
+            <div class="m_message__sender-status">
+              <span class="m_message__sender">Inna Avanesian</span>
+              <span>в</span>
+              <span class="m_message__time">12:31</span>
+              <span class="m_message__date">17 Апрель 2017</span>
+              <div class="m_message__editer">
+                <span class="m_message__edit"></span>
+                <span class="m_message__delete"></span>
+                <span class="m_message__holder--off"></span>
+              </div>
+            </div>
+            <div class="m_message__status">
+              <span class="m_status__plus"></span>
+              <span class="m_status__equals"></span>
+              <span class="m_status__minus"></span>
+            </div>
+            <div class="m_message__seen">
+              <span>Просмотрено</span>
+              <span class="m_message__seen__number">12</span>
+            </div>
+          </div>
+          <div class="m_message__content__body">
+            <span class="m_content__text">Donec viverra maximus urna, non aliquet sapien posuere sed. Proin ut nisl in velit scelerisque placerat. Aliquam fermentum massa placerat congue vehicula. Nam quis eros id ligula rutrum rutrum non nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos</span>
+          </div>
+        </div>
+
       </div>
-      <div class="m_message__content__body"></div>
-    </div>
+
+      <div class="m_message">
+
+        <a href="#" class="m_message__avatar m_message__avatar--you">
+          <span class="m_avatar__status"></span>
+          <img class="m_avatar_img" src="img/avatar.jpg" alt="avatar">
+        </a>
+
+        <div class="m_message__content m_message__content--you">
+          <div class="m_message__content__header">
+            <div class="m_message__sender-status">
+              <span class="m_message__sender">Вы</span>
+              <span>в</span>
+              <span class="m_message__time">12:31</span>
+              <span class="m_message__date">17 Апрель 2017</span>
+              <div class="m_message__editer">
+                <span class="m_message__edit"></span>
+                <span class="m_message__delete"></span>
+                <span class="m_message__holder--off"></span>
+              </div>
+            </div>
+            <div class="m_message__status">
+              <span class="m_status__plus"></span>
+              <span class="m_status__equals"></span>
+              <span class="m_status__minus"></span>
+            </div>
+            <div class="m_message__seen">
+              <span>Просмотрено</span>
+              <span class="m_message__seen__number">12</span>
+            </div>
+          </div>
+          <div class="m_message__content__body">
+            <span class="m_content__text">Donec viverra maximus urna, non aliquet sapien posuere sed. Proin ut nisl in velit scelerisque placerat. Aliquam fermentum massa placerat congue vehicula. Nam quis eros id ligula rutrum rutrum non nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos</span>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+    <footer class="m_footer">Footer</footer>
+
+
 
   </div>
 
