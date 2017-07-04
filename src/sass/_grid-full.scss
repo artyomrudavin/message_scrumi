@@ -1,0 +1,22 @@
+.m_wrapper {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 14vh 1fr 4vh;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header"
+                       "main"
+                       "footer"
+}
+
+.m_header{grid-area: header;}
+// .m_aside{grid-area: aside;}
+.m_main{grid-area: main;}
+.m_footer{grid-area: footer;}
+
+.m_header, .m_footer {
+  background-color: #2f332e;
+}
+
+.m_aside {
+  background-color: #333; 
+}

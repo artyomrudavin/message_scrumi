@@ -17,30 +17,30 @@
     <aside class="m_aside">Aside</aside>
     <main class="m_main">
 
-      <div class="m_message">
+      <div class="m_message m_message--else">
 
-        <a href="#" class="m_message__avatar m_message__avatar--else">
+        <div href="#" class="m_message__avatar m_message__avatar--else">
           <span class="m_avatar__status"></span>
           <img class="m_avatar_img" src="img/avatar.jpg" alt="avatar">
-        </a>
+        </div>
 
-        <div class="m_message__content m_message__content--else">
-          <div class="m_message__content__header">
+        <div class="m_message__content m_message__content--red">
+          <div class="m_message__content__header m_message__content__header--red">
             <div class="m_message__sender-status">
               <span class="m_message__sender">Inna Avanesian</span>
               <span>в</span>
               <span class="m_message__time">12:31</span>
               <span class="m_message__date">17 Апрель 2017</span>
               <div class="m_message__editer">
-                <span class="m_message__edit"></span>
-                <span class="m_message__delete"></span>
-                <span class="m_message__holder--off"></span>
+                <!-- <span class="m_message__edit"></span> -->
+                <!-- <span class="m_message__delete"></span> -->
+                <span class="m_message__holder--on"></span>
               </div>
             </div>
             <div class="m_message__status">
-              <span class="m_status__plus"></span>
-              <span class="m_status__equals"></span>
-              <span class="m_status__minus"></span>
+              <span class="m_status__plus m_status__plus--disabled"></span>
+              <span class="m_status__equals m_status__equals--disabled"></span>
+              <span class="m_status__minus m_status__minus--disabled"></span>
             </div>
             <div class="m_message__seen">
               <span>Просмотрено</span>
@@ -54,7 +54,44 @@
 
       </div>
 
-      <div class="m_message">
+      <div class="m_message m_message--else">
+
+        <div href="#" class="m_message__avatar m_message__avatar--else">
+          <span class="m_avatar__status"></span>
+          <img class="m_avatar_img" src="img/avatar.jpg" alt="avatar">
+        </div>
+
+        <div class="m_message__content m_message__content--blue">
+        <div class="m_message__content__header m_message__content__header--blue">
+            <div class="m_message__sender-status">
+              <span class="m_message__sender">Inna Avanesian</span>
+              <span>в</span>
+              <span class="m_message__time">12:31</span>
+              <span class="m_message__date">17 Апрель 2017</span>
+              <div class="m_message__editer">
+                <!-- <span class="m_message__edit"></span> -->
+                <!-- <span class="m_message__delete"></span> -->
+                <span class="m_message__holder--off"></span>
+              </div>
+            </div>
+            <div class="m_message__status">
+              <span class="m_status__plus">13</span>
+              <span class="m_status__equals">4</span>
+              <span class="m_status__minus">0</span>
+            </div>
+            <div class="m_message__seen">
+              <span>Просмотрено</span>
+              <span class="m_message__seen__number">12</span>
+            </div>
+          </div>
+          <div class="m_message__content__body">
+            <span class="m_content__text">Donec viverra maximus urna, non aliquet sapien posuere sed. Proin ut nisl in velit scelerisque placerat. Aliquam fermentum massa placerat congue vehicula. Nam quis eros id ligula rutrum rutrum non nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="m_message m_message--you">
 
         <a href="#" class="m_message__avatar m_message__avatar--you">
           <span class="m_avatar__status"></span>
@@ -75,9 +112,9 @@
               </div>
             </div>
             <div class="m_message__status">
-              <span class="m_status__plus"></span>
-              <span class="m_status__equals"></span>
-              <span class="m_status__minus"></span>
+              <span class="m_status__plus m_status__plus--disabled"></span>
+              <span class="m_status__equals m_status__equals--disabled"></span>
+              <span class="m_status__minus m_status__minus--disabled"></span>
             </div>
             <div class="m_message__seen">
               <span>Просмотрено</span>
