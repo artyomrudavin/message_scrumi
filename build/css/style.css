@@ -441,8 +441,7 @@ button {
     top: 0.1875rem;
     left: -0.625rem;
     border: 0.625rem solid transparent;
-    border-top: 0.625rem solid #fff;
-    border-right: 0.625rem solid #fff; }
+    border-top: 0.625rem solid #EFFDFE; }
   .m_message__content--attachment::before {
     content: '';
     position: absolute;
@@ -477,11 +476,13 @@ button {
   color: gray;
   border-bottom: 0.0625rem solid #cccccc; }
   .m_message__content__header--attachment {
-    border-top: 0.1875rem solid #3189d6; }
+    border-top: 0.1875rem solid #3189d6;
+    background-color: rgba(149, 213, 225, 0.1); }
   .m_message__content__header--pinned {
     border-top: 0.1875rem solid #f25520; }
 
 .m_message__content__body {
+  position: relative;
   padding-bottom: 0.625rem;
   display: flex;
   flex-direction: column;
@@ -491,22 +492,33 @@ button {
   padding: 0.625rem;
   font-size: 0.875rem; }
 
-.m_content__code {
+.m_content__attachment {
   max-height: 29vh;
-  overflow: auto; }
-  .m_content__code::-webkit-scrollbar-track {
+  overflow: auto;
+  border-left: 0.1875rem solid #95d5e1;
+  background-color: rgba(149, 213, 225, 0.1); }
+  .m_content__attachment::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 0.3125rem #fff;
     background-color: #f7f7f7; }
-  .m_content__code::-webkit-scrollbar {
+  .m_content__attachment::-webkit-scrollbar {
     width: 0.625rem;
     background-color: #999999; }
-  .m_content__code::-webkit-scrollbar-thumb {
+  .m_content__attachment::-webkit-scrollbar-thumb {
     background-color: #3189d6;
     border-radius: 0.625rem; }
-  .m_content__code pre {
-    border-left: 0.1875rem solid #95d5e1;
-    background-color: rgba(149, 213, 225, 0.1);
+  .m_content__attachment pre {
     padding: 0.625rem; }
+
+.m_attachment__seen {
+  position: absolute;
+  top: 2.5rem;
+  left: -4.875rem;
+  font-size: 0.75rem;
+  color: gray; }
+
+.m_attachment__seen__number {
+  font-size: 0.75rem;
+  color: #404040; }
 
 .m_message__sender, .m_message__time, .m_message__seen__number {
   font-size: 0.75rem;
@@ -555,35 +567,65 @@ button {
   .m_message__holder--on:hover {
     cursor: pointer; }
 
-.m_status__plus {
+.m_status__plus, .m_status__plus--enabled:before {
+  position: relative;
   display: inline-block;
   content: "";
-  margin-right: 0.9375rem; }
+  width: 1.875rem;
+  text-align: center; }
   .m_status__plus--disabled {
-    width: 0.9375rem;
+    width: 1.875rem;
     height: 0.9375rem;
-    background: url(../img/plus.png); }
-  .m_status__plus--pined .m_status__plus:hover {
+    background: url(../img/plus.png) center no-repeat; }
+  .m_status__plus:hover, .m_status__plus--enabled:hover:before {
     cursor: pointer; }
 
-.m_status__equals {
+.m_status__plus--enabled:before {
+  position: absolute;
+  top: -1.25rem;
+  left: 25%;
+  width: 0.9375rem;
+  height: 1.125rem;
+  background: url(../img/plus-a.png); }
+
+.m_status__equals, .m_status__equals--enabled:before {
+  position: relative;
   display: inline-block;
   content: "";
-  margin-right: 0.9375rem; }
+  width: 1.875rem;
+  text-align: center; }
   .m_status__equals--disabled {
-    width: 0.9375rem;
+    width: 1.875rem;
     height: 0.9375rem;
-    background: url(../img/eq.png); }
-  .m_status__equals:hover {
+    background: url(../img/eq.png) center no-repeat; }
+  .m_status__equals:hover, .m_status__equals--enabled:hover:before {
     cursor: pointer; }
 
-.m_status__minus {
+.m_status__equals--enabled:before {
+  position: absolute;
+  top: -1.25rem;
+  left: 25%;
+  width: 0.9375rem;
+  height: 1.125rem;
+  background: url(../img/eq-a.png); }
+
+.m_status__minus, .m_status__minus--enabled:before {
+  position: relative;
   display: inline-block;
   content: "";
-  margin-right: 0.9375rem; }
+  width: 1.875rem;
+  text-align: center; }
   .m_status__minus--disabled {
-    width: 0.9375rem;
+    width: 1.875rem;
     height: 0.9375rem;
-    background: url(../img/minus.png); }
-  .m_status__minus:hover {
+    background: url(../img/minus.png) center no-repeat; }
+  .m_status__minus:hover, .m_status__minus--enabled:hover:before {
     cursor: pointer; }
+
+.m_status__minus--enabled:before {
+  position: absolute;
+  top: -1.25rem;
+  left: 25%;
+  width: 0.9375rem;
+  height: 1.125rem;
+  background: url(../img/minus-a.png); }

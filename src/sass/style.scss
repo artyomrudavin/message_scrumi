@@ -78,8 +78,8 @@
     top: rem(3); 
     left: rem(-10);
     border: rem(10) solid transparent;
-    border-top: rem(10) solid #fff;
-    border-right: rem(10) solid #fff;
+    border-top: rem(10) solid #EFFDFE;
+    // border-right: rem(10) solid #fff; // rgba($blue-light, .1);
   }
 
   &--attachment::before {
@@ -124,6 +124,8 @@
   
   &--attachment {
     border-top: rem(3) solid $blue;
+    background-color: rgba($blue-light, .1); 
+    
   }
 
   &--pinned {
@@ -132,6 +134,7 @@
 }
 
 .m_message__content__body {
+  position: relative;
   padding-bottom: rem(10);
   display: flex;
   flex-direction: column;
@@ -143,9 +146,11 @@
   font-size: rem(14);
 }
 
-.m_content__code {
+.m_content__attachment {
   max-height: 29vh;
   overflow: auto;
+  border-left: rem(3) solid $blue-light;
+  background-color: rgba($blue-light, .1); 
 
   &::-webkit-scrollbar-track
   {
@@ -166,11 +171,22 @@
   }
 
   pre {
-    border-left: rem(3) solid $blue-light;
-    background-color: rgba($blue-light, .1); 
     padding: rem(10);
     
   }
+}
+
+.m_attachment__seen {
+  position: absolute;
+  top: rem(40);
+  left: rem(-78); 
+  font-size: rem(12); 
+  color: $gray-50;
+}
+
+.m_attachment__seen__number {
+  font-size: rem(12);
+  color: $gray-25;
 }
 
 .m_message__sender, .m_message__time, .m_message__seen__number {
@@ -234,52 +250,74 @@
   }
 }
 
-// attachment
-// pinned
-
 .m_status__plus {
+  position: relative;
   display: inline-block;
   content: "";
-  margin-right: rem(15);
-  
+  width: rem(30); 
+  text-align: center;
+
   &--disabled {
-    width: rem(15);
+    width: rem(30);
     height: rem(15);
-    background: url(../img/plus.png);
+    background: url(../img/plus.png) center no-repeat;
   }
 
-  &--pined 
-  
+
   &:hover {
     cursor: pointer;
   }
+}
+
+.m_status__plus--enabled:before {
+  @extend .m_status__plus;
+  position: absolute;
+  top: rem(-20); 
+  left: 25%;
+  width: rem(15);
+  height: rem(18);
+  background: url(../img/plus-a.png);
 }
 
 .m_status__equals {
+  position: relative;
   display: inline-block;
   content: "";
-  margin-right: rem(15); 
-  
+  width: rem(30);
+  text-align: center; 
+
   &--disabled {
-    width: rem(15);
+    width: rem(30);
     height: rem(15);
-    background: url(../img/eq.png);
+    background: url(../img/eq.png) center no-repeat;
   }
   
   &:hover {
     cursor: pointer;
   }
+}
+
+.m_status__equals--enabled:before {
+  @extend .m_status__equals;
+  position: absolute;
+  top: rem(-20); 
+  left: 25%; 
+  width: rem(15);
+  height: rem(18);
+  background: url(../img/eq-a.png);
 }
 
 .m_status__minus {
+  position: relative;
   display: inline-block;
   content: "";
-  margin-right: rem(15); 
-  
+  width: rem(30); 
+  text-align: center;
+
   &--disabled { 
-    width: rem(15);
+    width: rem(30);
     height: rem(15);
-    background: url(../img/minus.png);
+    background: url(../img/minus.png) center no-repeat;
   }
 
   &:hover {
@@ -287,3 +325,12 @@
   }
 }
 
+.m_status__minus--enabled:before {
+  @extend .m_status__minus;
+  position: absolute;
+  top: rem(-20); 
+  left: 25%;
+  width: rem(15);
+  height: rem(18);
+  background: url(../img/minus-a.png);
+}
