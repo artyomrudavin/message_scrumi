@@ -22,11 +22,11 @@
 .m_message {
   display: flex;
   margin-bottom: rem(20);
-  
 }
 
 .m_message__avatar {
   @extend .avatar-l;
+  flex: 1 0 auto;
   
   &--you {
     order: 1;
@@ -133,10 +133,21 @@
 
 .m_message__content__body {
   padding: rem(10);
+  display: flex;
+  flex-direction: column;
 }
 
 .m_content__text {
   font-size: rem(14); 
+}
+
+.m_content__code {
+  max-height: 29vh;
+  overflow: auto;
+
+  pre {
+    // text-align: center;
+  }
 }
 
 .m_message__sender, .m_message__time, .m_message__seen__number {
