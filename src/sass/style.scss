@@ -9,7 +9,7 @@
 //   display: grid;
 //   grid-gap: rem(20);
 //   margin-bottom: rem(20);
-  
+
 //   &--else {
 //     grid-template-columns: min-content 1fr;
 //   }
@@ -72,7 +72,7 @@
     border-top: rem(10) solid #fff;   
   }
 
-  &--blue::after {
+  &--attachment::after {
     content: ''; 
     position: absolute; 
     top: rem(3); 
@@ -82,7 +82,7 @@
     border-right: rem(10) solid #fff;
   }
 
-  &--blue::before {
+  &--attachment::before {
     content: ''; 
     position: absolute; 
     top: 0; 
@@ -91,7 +91,7 @@
     border-top: rem(9) solid $blue;
   }
 
-  &--red::after {
+  &--pinned::after {
     content: ''; 
     position: absolute; 
     top: rem(3); 
@@ -101,7 +101,7 @@
     border-right: rem(10) solid #fff;
   }
 
-  &--red::before {
+  &--pinned::before {
     content: ''; 
     position: absolute; 
     top: 0; 
@@ -122,31 +122,54 @@
   color: $gray-50;
   border-bottom: rem(1) solid $gray-80;
   
-  &--blue {
+  &--attachment {
     border-top: rem(3) solid $blue;
   }
 
-  &--red {
+  &--pinned {
     border-top: rem(3) solid $red;
   }
 }
 
 .m_message__content__body {
-  padding: rem(10);
+  padding-bottom: rem(10);
   display: flex;
   flex-direction: column;
+  line-height: 1.2;
 }
 
 .m_content__text {
-  font-size: rem(14); 
+  padding: rem(10);
+  font-size: rem(14);
 }
 
 .m_content__code {
   max-height: 29vh;
   overflow: auto;
 
+  &::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 rem(5) #fff;
+    background-color: $gray-97;
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: rem(10);
+    background-color: $gray-60;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    background-color: $blue;
+    border-radius: rem(10);
+  }
+
   pre {
-    // text-align: center;
+    border-left: rem(3) solid $blue-light;
+    background-color: rgba($blue-light, .1); 
+    padding: rem(10);
+    
   }
 }
 
@@ -211,6 +234,9 @@
   }
 }
 
+// attachment
+// pinned
+
 .m_status__plus {
   display: inline-block;
   content: "";
@@ -220,7 +246,9 @@
     width: rem(15);
     height: rem(15);
     background: url(../img/plus.png);
-  } 
+  }
+
+  &--pined 
   
   &:hover {
     cursor: pointer;
@@ -258,3 +286,4 @@
     cursor: pointer;
   }
 }
+

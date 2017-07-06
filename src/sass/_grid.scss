@@ -4,8 +4,8 @@
   grid-template-rows: 14vh 1fr 4vh;
   grid-template-columns: 1fr 25vw;
   grid-template-areas: "header header"
-                       "main aside"
-                       "footer footer"
+  "main aside"
+  "footer footer"
 }
 
 .m_header{grid-area: header;}
@@ -24,4 +24,8 @@
 .m_main {
   padding: rem(20); 
   overflow: auto;
+  
+  &::-webkit-scrollbar { 
+    display: none; 
+  }
 }
