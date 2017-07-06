@@ -4,22 +4,25 @@
 @import "grid";
 // @import "grid-full";
 
-.m_main {
-  padding: rem(20); 
-}
+
+// .m_message {
+//   display: grid;
+//   grid-gap: rem(20);
+//   margin-bottom: rem(20);
+  
+//   &--else {
+//     grid-template-columns: min-content 1fr;
+//   }
+
+//   &--you {
+//     grid-template-columns: 1fr min-content;
+//   }
+// }
 
 .m_message {
-  display: grid;
-  grid-gap: rem(20);
+  display: flex;
   margin-bottom: rem(20);
   
-  &--else {
-    grid-template-columns: min-content 1fr;
-  }
-
-  &--you {
-    grid-template-columns: 1fr min-content;
-  }
 }
 
 .m_message__avatar {
@@ -27,12 +30,12 @@
   
   &--you {
     order: 1;
-    // margin-left: rem(23); 
+    margin-left: rem(23); 
   }
 
   &--else {
     order: 0;
-    // margin-right: rem(23); 
+    margin-right: rem(23); 
   }
   
 }
@@ -128,16 +131,12 @@
   }
 }
 
-// .m_message__sender-status, .m_message__seen {
-//   flex: 1 0 100%/3;
-// }
-
-// .m_message__status {
-//   flex: 0 1 auto;
-// }
-
 .m_message__content__body {
   padding: rem(10);
+}
+
+.m_content__text {
+  font-size: rem(14); 
 }
 
 .m_message__sender, .m_message__time, .m_message__seen__number {
@@ -149,10 +148,6 @@
   display: inline-block; 
 }
 
-.m_content__text {
-  font-size: rem(14); 
-}
-
 .m_message__holder--off {
   display: inline-block;
   content: "";
@@ -160,6 +155,7 @@
   height: rem(12);
   margin-left: rem(10);
   background: url(../img/holder-off.png);
+  
   &:hover {
     cursor: pointer;
   }
@@ -172,6 +168,7 @@
   height: rem(11);
   margin-left: rem(10);
   background: url(../img/edit.png);
+  
   &:hover {
     cursor: pointer;
   }
@@ -184,6 +181,7 @@
   height: rem(11);
   margin-left: rem(10); 
   background: url(../img/del.png);
+  
   &:hover {
     cursor: pointer;
   }
@@ -196,6 +194,7 @@
   height: rem(12);
   margin-left: rem(10); 
   background: url(../img/holder-on.png);
+  
   &:hover {
     cursor: pointer;
   }

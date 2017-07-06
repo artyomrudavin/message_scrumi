@@ -394,22 +394,20 @@ button {
   background-color: #333; }
 
 .m_main {
-  padding: 1.25rem; }
+  padding: 1.25rem;
+  overflow: auto; }
 
 .m_message {
-  display: grid;
-  grid-gap: 1.25rem;
+  display: flex;
   margin-bottom: 1.25rem; }
-  .m_message--else {
-    grid-template-columns: min-content 1fr; }
-  .m_message--you {
-    grid-template-columns: 1fr min-content; }
 
 .m_message__avatar--you {
-  order: 1; }
+  order: 1;
+  margin-left: 1.4375rem; }
 
 .m_message__avatar--else {
-  order: 0; }
+  order: 0;
+  margin-right: 1.4375rem; }
 
 .m_message__content {
   min-width: 47.14vw;
@@ -483,15 +481,15 @@ button {
 .m_message__content__body {
   padding: 0.625rem; }
 
+.m_content__text {
+  font-size: 0.875rem; }
+
 .m_message__sender, .m_message__time, .m_message__seen__number {
   font-size: 0.75rem;
   color: #404040; }
 
 .m_message__editer {
   display: inline-block; }
-
-.m_content__text {
-  font-size: 0.875rem; }
 
 .m_message__holder--off {
   display: inline-block;
