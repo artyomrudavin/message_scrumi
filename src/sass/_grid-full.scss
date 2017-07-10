@@ -1,4 +1,4 @@
-.m_wrapper {
+.m-wrapper {
   display: grid;
   height: 100vh;
   grid-template-rows: 14vh 1fr 4vh;
@@ -8,20 +8,20 @@
                        "footer"
 }
 
-.m_header{grid-area: header;}
+.m-header{grid-area: header;}
 // .m_aside{grid-area: aside;}
-.m_main{grid-area: main;}
-.m_footer{grid-area: footer;}
+.m-main{grid-area: main;}
+.m-footer{grid-area: footer;}
 
-.m_header, .m_footer {
+.m-header, .m-footer {
   background-color: #2f332e;
 }
 
-.m_aside {
+.m-aside {
   background-color: #333; 
 }
 
-.m_main {
+.m-main {
   padding: rem(20); 
   overflow: auto;
   

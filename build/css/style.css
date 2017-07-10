@@ -288,7 +288,7 @@ button {
     background: linear-gradient(#59c714, #64dd17);
     box-shadow: inset 0 0.0625rem 0.0625rem #545454; }
 
-.avatar-l, .m_message__avatar {
+.avatar-l {
   display: inline-block;
   border-radius: 100%;
   background-color: white;
@@ -299,26 +299,26 @@ button {
   height: 3.125rem;
   border: 3px solid white;
   box-sizing: border-box; }
-  .avatar-l:before, .m_message__avatar:before {
+  .avatar-l:before {
     position: absolute;
     display: block;
     background-color: #e1e2e1;
     border-radius: 100%;
     content: ''; }
-  .avatar-l:before, .m_message__avatar:before {
+  .avatar-l:before {
     width: 3.75rem;
     height: 3.75rem;
     left: -0.625rem;
     top: -0.625rem;
     z-index: -1; }
-  .avatar-l:before, .m_message__avatar:before {
+  .avatar-l:before {
     top: -0.5rem;
     left: -0.5rem; }
-  .avatar-l img, .m_message__avatar img {
+  .avatar-l img {
     width: 100%;
     height: 100%;
     border-radius: 100%; }
-  .avatar-l .status, .m_message__avatar .status, .avatar-l .m_avatar__status, .m_message__avatar .m_avatar__status {
+  .avatar-l .status {
     position: absolute;
     box-sizing: border-box;
     bottom: 0.1875rem;
@@ -353,7 +353,7 @@ button {
   .avatar-s:before {
     top: -0.3125rem;
     left: -0.3125rem; }
-  .avatar-s .status, .avatar-s .m_avatar__status {
+  .avatar-s .status {
     position: absolute;
     box-sizing: border-box;
     bottom: 0;
@@ -368,60 +368,62 @@ button {
     height: 100%;
     border-radius: 100%; }
 
-.m_wrapper {
+.m-wrapper {
   display: grid;
   height: 100vh;
   grid-template-rows: 14vh 1fr 4vh;
   grid-template-columns: 1fr 25vw;
   grid-template-areas: "header header" "main aside" "footer footer"; }
 
-.m_header {
+.m-header {
   grid-area: header; }
 
-.m_aside {
+.m-aside {
   grid-area: aside; }
 
-.m_main {
+.m-main {
   grid-area: main; }
 
-.m_footer {
+.m-footer {
   grid-area: footer; }
 
-.m_header, .m_footer {
+.m-header, .m-footer {
   background-color: #2f332e; }
 
-.m_aside {
+.m-aside {
   background-color: #333; }
 
-.m_main {
+.m-main {
   padding: 1.25rem;
   overflow: auto; }
-  .m_main::-webkit-scrollbar {
+  .m-main::-webkit-scrollbar {
     display: none; }
 
 /* ----- Styly for GRID CSS ----- */
 /* ----- Styly for FLEX CSS ----- */
-.m_message {
+.m-message {
   display: flex;
   margin-bottom: 1.25rem; }
 
-.m_message__avatar {
+.m-message__avatar {
   flex: 1 0 auto; }
-  .m_message__avatar--you {
-    order: 1;
-    margin-left: 1.4375rem; }
-  .m_message__avatar--else {
-    order: 0;
-    margin-right: 1.4375rem; }
 
-.m_message__content {
+.m-message--else .m-message__avatar {
+  order: 0;
+  margin-right: 1.4375rem; }
+
+.m-message--you .m-message__avatar {
+  order: 1;
+  margin-left: 1.4375rem; }
+
+.m-message__content {
   min-width: 47.14vw;
   box-sizing: border-box;
   position: relative;
   background-color: #fff;
   border-radius: 0.1875rem;
   box-shadow: 0 0.0625rem 0.0625rem #cccccc; }
-  .m_message__content--else::after {
+  .m-message__content--else::after {
     content: '';
     position: absolute;
     top: 0;
@@ -429,7 +431,7 @@ button {
     border: 0.625rem solid transparent;
     border-top: 0.625rem solid #fff;
     border-right: 0.625rem solid #fff; }
-  .m_message__content--you::after {
+  .m-message__content--you::after {
     content: '';
     position: absolute;
     top: 0;
@@ -437,21 +439,21 @@ button {
     border: 0.625rem solid transparent;
     border-left: 0.625rem solid #fff;
     border-top: 0.625rem solid #fff; }
-  .m_message__content--attachment::after {
+  .m-message__content--snippet::after {
     content: '';
     position: absolute;
     top: 0.1875rem;
     left: -0.625rem;
     border: 0.625rem solid transparent;
     border-top: 0.625rem solid #EFFDFE; }
-  .m_message__content--attachment::before {
+  .m-message__content--snippet::before {
     content: '';
     position: absolute;
     top: 0;
     left: -0.8125rem;
     border: 0.625rem solid transparent;
     border-top: 0.5625rem solid #3189d6; }
-  .m_message__content--pinned::after {
+  .m-message__content--pinned::after {
     content: '';
     position: absolute;
     top: 0.1875rem;
@@ -459,7 +461,7 @@ button {
     border: 0.625rem solid transparent;
     border-top: 0.625rem solid #fff;
     border-right: 0.625rem solid #fff; }
-  .m_message__content--pinned::before {
+  .m-message__content--pinned::before {
     content: '';
     position: absolute;
     top: 0;
@@ -467,7 +469,7 @@ button {
     border: 0.625rem solid transparent;
     border-top: 0.5625rem solid #f25520; }
 
-.m_message__content__header {
+.m-message__content-header {
   display: flex;
   box-sizing: border-box;
   justify-content: space-between;
@@ -477,112 +479,112 @@ button {
   font-size: 0.75rem;
   color: gray;
   border-bottom: 0.0625rem solid #cccccc; }
-  .m_message__content__header--attachment {
+  .m-message__content-header--snippet {
     border-top: 0.1875rem solid #3189d6;
     background-color: rgba(149, 213, 225, 0.1); }
-  .m_message__content__header--pinned {
+  .m-message__content-header--pinned {
     border-top: 0.1875rem solid #f25520; }
 
-.m_message__content__body {
+.m-message__content-body {
   position: relative;
   padding-bottom: 0.625rem;
   display: flex;
   flex-direction: column;
   line-height: 1.2; }
 
-.m_content__text {
+.m-content__text {
   padding: 0.625rem;
   font-size: 0.875rem; }
 
-.m_content__attachment {
+.m-content__snippet {
   max-height: 29vh;
   overflow: auto;
   border-left: 0.1875rem solid #95d5e1;
   background-color: rgba(149, 213, 225, 0.1); }
-  .m_content__attachment::-webkit-scrollbar-track {
+  .m-content__snippet::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 0.3125rem #fff;
     background-color: #f7f7f7; }
-  .m_content__attachment::-webkit-scrollbar {
+  .m-content__snippet::-webkit-scrollbar {
     width: 0.625rem;
     background-color: #999999; }
-  .m_content__attachment::-webkit-scrollbar-thumb {
+  .m-content__snippet::-webkit-scrollbar-thumb {
     background-color: #3189d6;
     border-radius: 0.625rem; }
-  .m_content__attachment pre {
+  .m-content__snippet pre {
     padding: 0.625rem; }
 
-.m_attachment__seen {
+.m-snippet__seen {
   position: absolute;
   top: 2.5rem;
   left: -4.875rem;
   font-size: 0.75rem;
   color: gray; }
 
-.m_attachment__seen__number {
+.m-snippet__seen__number {
   font-size: 0.75rem;
   color: #404040; }
 
-.m_message__sender, .m_message__time, .m_message__seen__number {
+.m-message__sender, .m-message__time, .m-message__seen-number {
   font-size: 0.75rem;
   color: #404040; }
 
-.m_message__editer {
+.m-message__editer {
   display: inline-block; }
 
-.m_message__holder--off {
+.m-message__holder--off {
   display: inline-block;
   content: "";
   width: 0.8125rem;
   height: 0.75rem;
   margin-left: 0.625rem;
   background: url(../img/holder-off.png); }
-  .m_message__holder--off:hover {
+  .m-message__holder--off:hover {
     cursor: pointer; }
 
-.m_message__edit {
+.m-message__edit {
   display: inline-block;
   content: "";
   width: 0.6875rem;
   height: 0.6875rem;
   margin-left: 0.625rem;
   background: url(../img/edit.png); }
-  .m_message__edit:hover {
+  .m-message__edit:hover {
     cursor: pointer; }
 
-.m_message__delete {
+.m-message__delete {
   display: inline-block;
   content: "";
   width: 0.5625rem;
   height: 0.6875rem;
   margin-left: 0.625rem;
   background: url(../img/del.png); }
-  .m_message__delete:hover {
+  .m-message__delete:hover {
     cursor: pointer; }
 
-.m_message__holder--on {
+.m-message__holder--on {
   display: inline-block;
   content: "";
   width: 0.8125rem;
   height: 0.75rem;
   margin-left: 0.625rem;
   background: url(../img/holder-on.png); }
-  .m_message__holder--on:hover {
+  .m-message__holder--on:hover {
     cursor: pointer; }
 
-.m_status__plus, .m_status__plus--enabled:before {
+.m-status__plus, .m-status__plus--enabled:before {
   position: relative;
   display: inline-block;
   content: "";
   width: 1.875rem;
   text-align: center; }
-  .m_status__plus--disabled {
+  .m-status__plus--disabled {
     width: 1.875rem;
     height: 0.9375rem;
     background: url(../img/plus.png) center no-repeat; }
-  .m_status__plus:hover, .m_status__plus--enabled:hover:before {
+  .m-status__plus:hover, .m-status__plus--enabled:hover:before {
     cursor: pointer; }
 
-.m_status__plus--enabled:before {
+.m-status__plus--enabled:before {
   position: absolute;
   top: -1.25rem;
   left: 25%;
@@ -590,20 +592,20 @@ button {
   height: 1.125rem;
   background: url(../img/plus-a.png); }
 
-.m_status__equals, .m_status__equals--enabled:before {
+.m-status__equals, .m-status__equals--enabled:before {
   position: relative;
   display: inline-block;
   content: "";
   width: 1.875rem;
   text-align: center; }
-  .m_status__equals--disabled {
+  .m-status__equals--disabled {
     width: 1.875rem;
     height: 0.9375rem;
     background: url(../img/eq.png) center no-repeat; }
-  .m_status__equals:hover, .m_status__equals--enabled:hover:before {
+  .m-status__equals:hover, .m-status__equals--enabled:hover:before {
     cursor: pointer; }
 
-.m_status__equals--enabled:before {
+.m-status__equals--enabled:before {
   position: absolute;
   top: -1.25rem;
   left: 25%;
@@ -611,20 +613,20 @@ button {
   height: 1.125rem;
   background: url(../img/eq-a.png); }
 
-.m_status__minus, .m_status__minus--enabled:before {
+.m-status__minus, .m-status__minus--enabled:before {
   position: relative;
   display: inline-block;
   content: "";
   width: 1.875rem;
   text-align: center; }
-  .m_status__minus--disabled {
+  .m-status__minus--disabled {
     width: 1.875rem;
     height: 0.9375rem;
     background: url(../img/minus.png) center no-repeat; }
-  .m_status__minus:hover, .m_status__minus--enabled:hover:before {
+  .m-status__minus:hover, .m-status__minus--enabled:hover:before {
     cursor: pointer; }
 
-.m_status__minus--enabled:before {
+.m-status__minus--enabled:before {
   position: absolute;
   top: -1.25rem;
   left: 25%;

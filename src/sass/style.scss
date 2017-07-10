@@ -8,7 +8,7 @@
 
 /* ----- Styly for GRID CSS ----- */
 
-// .m_message {
+// .m-message {
 //   display: grid;
 //   grid-gap: rem(20);
 //   margin-bottom: rem(20);
@@ -25,32 +25,35 @@
 
 /* ----- Styly for FLEX CSS ----- */
 
-.m_message {
+.m-message {
   display: flex;
   margin-bottom: rem(20);
 }
 
-.m_message__avatar {
-  @extend .avatar-l;
+.m-message__avatar {
   flex: 1 0 auto;
-  
-  &--you {
+}
+
+.m-message--else {
+
+  .m-message__avatar {
+    order: 0;
+    margin-right: rem(23); 
+  }
+
+}
+
+.m-message--you {
+
+  .m-message__avatar {
     order: 1;
     margin-left: rem(23); 
   }
 
-  &--else {
-    order: 0;
-    margin-right: rem(23); 
-  }
-  
 }
 
-.m_avatar__status {
-  @extend .status;
-}
 
-.m_message__content {
+.m-message__content {
   min-width: 47.14vw; 
   box-sizing: border-box;
   position: relative;
@@ -78,7 +81,7 @@
     border-top: rem(10) solid #fff;   
   }
 
-  &--attachment::after {
+  &--snippet::after {
     content: ''; 
     position: absolute; 
     top: rem(3); 
@@ -87,7 +90,7 @@
     border-top: rem(10) solid #EFFDFE;
   }
 
-  &--attachment::before {
+  &--snippet::before {
     content: ''; 
     position: absolute; 
     top: 0; 
@@ -116,7 +119,7 @@
   }
 }
 
-.m_message__content__header {
+.m-message__content-header {
   display: flex;
   box-sizing: border-box; 
   justify-content: space-between;
@@ -127,7 +130,7 @@
   color: $gray-50;
   border-bottom: rem(1) solid $gray-80;
   
-  &--attachment {
+  &--snippet {
     border-top: rem(3) solid $blue;
     background-color: rgba($blue-light, .1); 
   }
@@ -137,7 +140,7 @@
   }
 }
 
-.m_message__content__body {
+.m-message__content-body {
   position: relative;
   padding-bottom: rem(10);
   display: flex;
@@ -145,12 +148,12 @@
   line-height: 1.2;
 }
 
-.m_content__text {
+.m-content__text {
   padding: rem(10);
   font-size: rem(14);
 }
 
-.m_content__attachment {
+.m-content__snippet {
   max-height: 29vh;
   overflow: auto;
   border-left: rem(3) solid $blue-light;
@@ -180,7 +183,7 @@
   }
 }
 
-.m_attachment__seen {
+.m-snippet__seen {
   position: absolute;
   top: rem(40);
   left: rem(-78); 
@@ -188,21 +191,21 @@
   color: $gray-50;
 }
 
-.m_attachment__seen__number {
+.m-snippet__seen__number {
   font-size: rem(12);
   color: $gray-25;
 }
 
-.m_message__sender, .m_message__time, .m_message__seen__number {
+.m-message__sender, .m-message__time, .m-message__seen-number {
   font-size: rem(12);
   color: $gray-25; 
 }
 
-.m_message__editer {
+.m-message__editer {
   display: inline-block; 
 }
 
-.m_message__holder--off {
+.m-message__holder--off {
   display: inline-block;
   content: "";
   width: rem(13);
@@ -215,7 +218,7 @@
   }
 }
 
-.m_message__edit {
+.m-message__edit {
   display: inline-block;
   content: "";
   width: rem(11);
@@ -228,7 +231,7 @@
   }
 }
 
-.m_message__delete {
+.m-message__delete {
   display: inline-block;
   content: "";
   width: rem(9);
@@ -241,7 +244,7 @@
   }
 }
 
-.m_message__holder--on {
+.m-message__holder--on {
   display: inline-block;
   content: "";
   width: rem(13);
@@ -254,7 +257,7 @@
   }
 }
 
-.m_status__plus {
+.m-status__plus {
   position: relative;
   display: inline-block;
   content: "";
@@ -273,8 +276,8 @@
   }
 }
 
-.m_status__plus--enabled:before {
-  @extend .m_status__plus;
+.m-status__plus--enabled:before {
+  @extend .m-status__plus;
   position: absolute;
   top: rem(-20); 
   left: 25%;
@@ -283,7 +286,7 @@
   background: url(../img/plus-a.png);
 }
 
-.m_status__equals {
+.m-status__equals {
   position: relative;
   display: inline-block;
   content: "";
@@ -301,8 +304,8 @@
   }
 }
 
-.m_status__equals--enabled:before {
-  @extend .m_status__equals;
+.m-status__equals--enabled:before {
+  @extend .m-status__equals;
   position: absolute;
   top: rem(-20); 
   left: 25%; 
@@ -311,7 +314,7 @@
   background: url(../img/eq-a.png);
 }
 
-.m_status__minus {
+.m-status__minus {
   position: relative;
   display: inline-block;
   content: "";
@@ -329,8 +332,8 @@
   }
 }
 
-.m_status__minus--enabled:before {
-  @extend .m_status__minus;
+.m-status__minus--enabled:before {
+  @extend .m-status__minus;
   position: absolute;
   top: rem(-20); 
   left: 25%;
