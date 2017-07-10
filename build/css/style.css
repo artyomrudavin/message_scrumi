@@ -399,8 +399,6 @@ button {
   .m-main::-webkit-scrollbar {
     display: none; }
 
-/* ----- Styly for GRID CSS ----- */
-/* ----- Styly for FLEX CSS ----- */
 .m-message {
   display: flex;
   margin-bottom: 1.25rem; }

@@ -6,25 +6,6 @@
 
 
 
-/* ----- Styly for GRID CSS ----- */
-
-// .m-message {
-//   display: grid;
-//   grid-gap: rem(20);
-//   margin-bottom: rem(20);
-
-//   &--else {
-//     grid-template-columns: min-content 1fr;
-//   }
-
-//   &--you {
-//     grid-template-columns: 1fr min-content;
-//   }
-// }
-
-
-/* ----- Styly for FLEX CSS ----- */
-
 .m-message {
   display: flex;
   margin-bottom: rem(20);
