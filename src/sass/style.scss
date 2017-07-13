@@ -15,6 +15,25 @@
   flex: 1 0 auto;
 }
 
+.m-message__content-header {
+  display: flex;
+  box-sizing: border-box; 
+  justify-content: space-between;
+  align-items: center;
+  height: rem(29);
+  padding: 0 rem(10) 0 rem(10);
+  font-size: rem(12); 
+  color: $gray-50;
+  border-bottom: rem(1) solid $gray-80;
+  
+  // &--snippet {
+     
+  // }
+
+  // &--pinned {
+  // }
+}
+
 .corner::after {
   content: ''; 
   position: absolute; 
@@ -24,6 +43,11 @@
 }
 
 .snippet {
+
+  .m-message__content-header {
+    border-top: rem(3) solid $blue;
+    background-color: rgba($blue-light, .1);
+  }
 
   .corner::after {
     top: rem(3);
@@ -42,6 +66,10 @@
 
 .pinned {
 
+  .m-message__content-header {
+    border-top: rem(3) solid $red;
+  }
+
   .corner::after {
     top: rem(3);
     border-top: rem(10) solid #fff;  
@@ -57,26 +85,6 @@
 
 }
 
-.m-message__content-header {
-  display: flex;
-  box-sizing: border-box; 
-  justify-content: space-between;
-  align-items: center;
-  height: rem(29);
-  padding: 0 rem(10) 0 rem(10);
-  font-size: rem(12); 
-  color: $gray-50;
-  border-bottom: rem(1) solid $gray-80;
-  
-  &--snippet {
-    border-top: rem(3) solid $blue;
-    background-color: rgba($blue-light, .1); 
-  }
-
-  &--pinned {
-    border-top: rem(3) solid $red;
-  }
-}
 
 .m-message--else {
 
