@@ -142,23 +142,21 @@
   .m-content__snippet pre {
     padding: 0.625rem; }
 
-.m-snippet__seen {
-  position: absolute;
-  top: 2.5rem;
-  left: -4.875rem;
-  font-size: 0.75rem;
-  color: gray; }
-
-.m-snippet__seen__number {
-  font-size: 0.75rem;
-  color: #404040; }
-
 .m-message__sender, .m-message__time, .m-message__seen-number {
   font-size: 0.75rem;
   color: #404040; }
 
 .m-message__editer {
   display: inline-block; }
+
+.m-message__holder--on {
+  display: inline-block;
+  content: "";
+  width: 0.8125rem;
+  height: 0.75rem;
+  margin-left: 0.625rem;
+  background: url(../img/holder-on.png);
+  cursor: pointer; }
 
 .m-message__holder--off {
   display: inline-block;
@@ -185,15 +183,6 @@
   height: 0.6875rem;
   margin-left: 0.625rem;
   background: url(../img/del.png);
-  cursor: pointer; }
-
-.m-message__holder--on {
-  display: inline-block;
-  content: "";
-  width: 0.8125rem;
-  height: 0.75rem;
-  margin-left: 0.625rem;
-  background: url(../img/holder-on.png);
   cursor: pointer; }
 
 .m-status__plus, .m-status__plus--enabled::before {

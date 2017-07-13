@@ -163,19 +163,6 @@
   }
 }
 
-.m-snippet__seen {
-  position: absolute;
-  top: rem(40);
-  left: rem(-78); 
-  font-size: rem(12); 
-  color: $gray-50;
-}
-
-.m-snippet__seen__number {
-  font-size: rem(12);
-  color: $gray-25;
-}
-
 .m-message__sender, .m-message__time, .m-message__seen-number {
   font-size: rem(12);
   color: $gray-25; 
@@ -183,6 +170,16 @@
 
 .m-message__editer {
   display: inline-block; 
+}
+
+.m-message__holder--on {
+  display: inline-block;
+  content: "";
+  width: rem(13);
+  height: rem(12);
+  margin-left: rem(10); 
+  background: url(../img/holder-on.png);
+  cursor: pointer;
 }
 
 .m-message__holder--off {
@@ -212,16 +209,6 @@
   height: rem(11);
   margin-left: rem(10); 
   background: url(../img/del.png);
-  cursor: pointer;
-}
-
-.m-message__holder--on {
-  display: inline-block;
-  content: "";
-  width: rem(13);
-  height: rem(12);
-  margin-left: rem(10); 
-  background: url(../img/holder-on.png);
   cursor: pointer;
 }
 
