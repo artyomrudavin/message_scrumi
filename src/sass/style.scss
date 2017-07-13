@@ -3,8 +3,6 @@
 @import "grid";
 // @import "grid-full";
 
-
-
 .m-message {
   display: flex;
   margin-bottom: rem(20);
@@ -27,11 +25,11 @@
 }
 
 .corner::after {
-  content: ''; 
+  content: ""; 
   position: absolute; 
   top: 0; 
   border: rem(10) solid transparent;
-  border-top: rem(10) solid #fff; 
+  border-top: rem(10) solid $white; 
 }
 
 .snippet {
@@ -47,7 +45,7 @@
   }
 
   .corner::before {
-    content: ''; 
+    content: ""; 
     position: absolute; 
     top: 0; 
     border: rem(10) solid transparent;
@@ -64,11 +62,11 @@
 
   .corner::after {
     top: rem(3);
-    border-top: rem(10) solid #fff;  
+    border-top: rem(10) solid $white;  
   } 
 
   .corner::before {
-    content: ''; 
+    content: ""; 
     position: absolute; 
     top: 0; 
     border: rem(10) solid transparent;
@@ -76,7 +74,6 @@
   }
 
 }
-
 
 .m-message--else {
 
@@ -86,7 +83,7 @@
   }
 
   .corner::after {
-    border-right: rem(10) solid #fff;
+    border-right: rem(10) solid $white;
     left: rem(-10);
   }
 
@@ -104,7 +101,7 @@
   }
 
   .corner::after {
-    border-left: rem(10) solid #fff;
+    border-left: rem(10) solid $white;
     right: rem(-10); 
   }
 
@@ -114,12 +111,11 @@
 
 }
 
-
 .m-message__content {
   min-width: 47.14vw; 
   box-sizing: border-box;
   position: relative;
-  background-color: #fff;
+  background-color: $white;
   border-radius: rem(3);
   box-shadow: 0 rem(1) rem(1) $gray-80; 
 }
@@ -145,7 +141,7 @@
 
   &::-webkit-scrollbar-track
   {
-    -webkit-box-shadow: inset 0 0 rem(5) #fff;
+    -webkit-box-shadow: inset 0 0 rem(5) $white;
     background-color: $gray-97;
   }
 
@@ -196,10 +192,7 @@
   height: rem(12);
   margin-left: rem(10);
   background: url(../img/holder-off.png);
-  
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 }
 
 .m-message__edit {
@@ -209,10 +202,7 @@
   height: rem(11);
   margin-left: rem(10);
   background: url(../img/edit.png);
-  
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 }
 
 .m-message__delete {
@@ -222,10 +212,7 @@
   height: rem(11);
   margin-left: rem(10); 
   background: url(../img/del.png);
-  
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 }
 
 .m-message__holder--on {
@@ -235,10 +222,7 @@
   height: rem(12);
   margin-left: rem(10); 
   background: url(../img/holder-on.png);
-  
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 }
 
 .m-status__plus {
@@ -247,6 +231,7 @@
   content: "";
   width: rem(30); 
   text-align: center;
+  cursor: pointer;
 
   &--disabled {
     width: rem(30);
@@ -254,13 +239,9 @@
     background: url(../img/plus.png) center no-repeat;
   }
 
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
-.m-status__plus--enabled:before {
+.m-status__plus--enabled::before {
   @extend .m-status__plus;
   position: absolute;
   top: rem(-20); 
@@ -276,6 +257,7 @@
   content: "";
   width: rem(30);
   text-align: center; 
+  cursor: pointer;
 
   &--disabled {
     width: rem(30);
@@ -283,12 +265,9 @@
     background: url(../img/eq.png) center no-repeat;
   }
   
-  &:hover {
-    cursor: pointer;
-  }
 }
 
-.m-status__equals--enabled:before {
+.m-status__equals--enabled::before {
   @extend .m-status__equals;
   position: absolute;
   top: rem(-20); 
@@ -304,6 +283,7 @@
   content: "";
   width: rem(30); 
   text-align: center;
+  cursor: pointer;
 
   &--disabled { 
     width: rem(30);
@@ -311,12 +291,9 @@
     background: url(../img/minus.png) center no-repeat;
   }
 
-  &:hover {
-    cursor: pointer;
-  }
 }
 
-.m-status__minus--enabled:before {
+.m-status__minus--enabled::before {
   @extend .m-status__minus;
   position: absolute;
   top: rem(-20); 
