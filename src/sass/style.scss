@@ -1,6 +1,5 @@
 @import "mixins";
 @import "var";
-@import "theme";
 @import "grid";
 // @import "grid-full";
 
@@ -25,13 +24,6 @@
   font-size: rem(12); 
   color: $gray-50;
   border-bottom: rem(1) solid $gray-80;
-  
-  // &--snippet {
-     
-  // }
-
-  // &--pinned {
-  // }
 }
 
 .corner::after {

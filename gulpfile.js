@@ -2,8 +2,14 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var connect = require('gulp-connect');
 
-gulp.task ('sass', function () {
-  return gulp.src('src/sass/**/*.scss')
+gulp.task ('sass-style', function () {
+  return gulp.src('src/sass/**/style.scss')
+  .pipe(sass({errLogToConsole: true}))
+  .pipe(gulp.dest('build/css'));
+});
+
+gulp.task ('sass-theme', function () {
+  return gulp.src('src/sass/**/theme.scss')
   .pipe(sass({errLogToConsole: true}))
   .pipe(gulp.dest('build/css'));
 });
@@ -24,4 +30,4 @@ gulp.task ('watch', function () {
   gulp.watch('build/**/*', ['livereload']);
 });
 
-gulp.task('default', ['sass', 'watch', 'connect']);
+gulp.task('default', ['sass-theme', 'sass-style', 'watch', 'connect']);
