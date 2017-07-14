@@ -63,6 +63,39 @@
     font-size: 0.75rem;
     color: gray;
     border-bottom: 0.0625rem solid #cccccc; }
+  .m-message__editer {
+    display: inline-block; }
+    .m-message__editer li {
+      display: inline-block;
+      content: "";
+      margin-left: 0.625rem;
+      cursor: pointer; }
+  .m-message__edit {
+    width: 0.6875rem;
+    height: 0.6875rem;
+    background: url(../img/edit.png); }
+  .m-message__delete {
+    width: 0.5625rem;
+    height: 0.6875rem;
+    background: url(../img/del.png); }
+  .m-message__pin {
+    width: 0.8125rem;
+    height: 0.75rem;
+    background: url(../img/holder-off.png); }
+
+.m-message--you .m-message__avatar {
+  order: 1;
+  margin-left: 1.4375rem;
+  margin-right: initial; }
+
+.m-message--you .m-message__content::after {
+  border-left: 0.625rem solid #fff;
+  right: -0.625rem;
+  left: initial; }
+
+.m-message--you .m-message__content::before {
+  right: -0.8125rem;
+  left: initial; }
 
 .snippet .m-message__content-header {
   border-top: 0.1875rem solid #3189d6;
@@ -93,19 +126,8 @@
   border: 0.625rem solid transparent;
   border-top: 0.5625rem solid #f25520; }
 
-.m-message--you .m-message__avatar {
-  order: 1;
-  margin-left: 1.4375rem;
-  margin-right: initial; }
-
-.m-message--you .m-message__content::after {
-  border-left: 0.625rem solid #fff;
-  right: -0.625rem;
-  left: initial; }
-
-.m-message--you .m-message__content::before {
-  right: -0.8125rem;
-  left: initial; }
+.pinned .m-message__pin {
+  background: url(../img/holder-on.png); }
 
 .m-message__content-body {
   position: relative;
@@ -138,45 +160,6 @@
 .m-message__sender, .m-message__time, .m-message__seen-number {
   font-size: 0.75rem;
   color: #404040; }
-
-.m-message__editer {
-  display: inline-block; }
-
-.m-message__holder--on {
-  display: inline-block;
-  content: "";
-  width: 0.8125rem;
-  height: 0.75rem;
-  margin-left: 0.625rem;
-  background: url(../img/holder-on.png);
-  cursor: pointer; }
-
-.m-message__holder--off {
-  display: inline-block;
-  content: "";
-  width: 0.8125rem;
-  height: 0.75rem;
-  margin-left: 0.625rem;
-  background: url(../img/holder-off.png);
-  cursor: pointer; }
-
-.m-message__edit {
-  display: inline-block;
-  content: "";
-  width: 0.6875rem;
-  height: 0.6875rem;
-  margin-left: 0.625rem;
-  background: url(../img/edit.png);
-  cursor: pointer; }
-
-.m-message__delete {
-  display: inline-block;
-  content: "";
-  width: 0.5625rem;
-  height: 0.6875rem;
-  margin-left: 0.625rem;
-  background: url(../img/del.png);
-  cursor: pointer; }
 
 .m-status__plus, .m-status__plus--enabled::before {
   position: relative;
