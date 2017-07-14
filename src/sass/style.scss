@@ -6,31 +6,49 @@
 .m-message {
   display: flex;
   margin-bottom: rem(20);
+
+  &__avatar {
+    flex: 1 0 auto;
+    order: 0;
+    margin-right: rem(23); 
+  }
+
+  &__content {
+    min-width: 47.14vw; 
+    box-sizing: border-box;
+    position: relative;
+    background-color: $white;
+    border-radius: rem(3);
+    box-shadow: 0 rem(1) rem(1) $gray-80; 
+  }
+
+  &__content::after {
+    left: rem(-10);
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    border: rem(10) solid transparent;
+    border-top: rem(10) solid $white;
+  }
+
+  &__content::before {
+    left: rem(-13);
+  }
+
+  &__content-header {
+    display: flex;
+    box-sizing: border-box; 
+    justify-content: space-between;
+    align-items: center;
+    height: rem(29);
+    padding: 0 rem(10) 0 rem(10);
+    font-size: rem(12); 
+    color: $gray-50;
+    border-bottom: rem(1) solid $gray-80;
+  }
+  
 }
 
-.m-message__avatar {
-  flex: 1 0 auto;
-}
-
-.m-message__content-header {
-  display: flex;
-  box-sizing: border-box; 
-  justify-content: space-between;
-  align-items: center;
-  height: rem(29);
-  padding: 0 rem(10) 0 rem(10);
-  font-size: rem(12); 
-  color: $gray-50;
-  border-bottom: rem(1) solid $gray-80;
-}
-
-.corner::after {
-  content: ""; 
-  position: absolute; 
-  top: 0; 
-  border: rem(10) solid transparent;
-  border-top: rem(10) solid $white; 
-}
 
 .snippet {
 
@@ -39,12 +57,12 @@
     background-color: rgba($blue-light, .1);
   }
 
-  .corner::after {
+  .m-message__content::after {
     top: rem(3);
-    border-top: rem(10) solid #EFFDFE;  
+    border-top: rem(10) solid #EFFDFE; 
   }
 
-  .corner::before {
+  .m-message__content::before {
     content: ""; 
     position: absolute; 
     top: 0; 
@@ -60,12 +78,12 @@
     border-top: rem(3) solid $red;
   }
 
-  .corner::after {
+  .m-message__content::after {
     top: rem(3);
     border-top: rem(10) solid $white;  
   } 
 
-  .corner::before {
+  .m-message__content::before {
     content: ""; 
     position: absolute; 
     top: 0; 
@@ -75,50 +93,27 @@
 
 }
 
-.m-message--else {
-
-  .m-message__avatar {
-    order: 0;
-    margin-right: rem(23); 
-  }
-
-  .corner::after {
-    border-right: rem(10) solid $white;
-    left: rem(-10);
-  }
-
-  .corner::before {
-    left: rem(-13);
-  }
-
-}
-
 .m-message--you {
 
   .m-message__avatar {
     order: 1;
-    margin-left: rem(23); 
+    margin-left: rem(23);
+    margin-right: initial;
   }
 
-  .corner::after {
+  .m-message__content::after {
     border-left: rem(10) solid $white;
     right: rem(-10); 
+    left: initial;
   }
 
-  .corner::before {
+  .m-message__content::before {
     right: rem(-13);
+    left: initial;
   }
 
 }
 
-.m-message__content {
-  min-width: 47.14vw; 
-  box-sizing: border-box;
-  position: relative;
-  background-color: $white;
-  border-radius: rem(3);
-  box-shadow: 0 rem(1) rem(1) $gray-80; 
-}
 
 .m-message__content-body {
   position: relative;
