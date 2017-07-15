@@ -53,7 +53,6 @@
     display: inline-block;
 
     li {
-      display: inline-block;
       content: "";
       margin-left: rem(10);
       cursor: pointer;
@@ -61,18 +60,21 @@
   }
 
   &__edit {
+    display: none;
     width: rem(11);
     height: rem(11);
     background: url(../img/edit.png);
   }
 
   &__delete {
+    display: none;
     width: rem(9);
     height: rem(11);
     background: url(../img/del.png);
   }
 
   &__pin {
+    display: inline-block;
     width: rem(13);
     height: rem(12);
     background: url(../img/holder-off.png);
@@ -97,6 +99,13 @@
   .m-message__content::before {
     right: rem(-13);
     left: initial;
+  }
+
+  .m-message__editer {
+
+    li {
+      display: inline-block;
+    }
   }
 
 }
@@ -196,25 +205,41 @@
   color: $gray-25; 
 }
 
-.m-status__plus {
-  position: relative;
-  display: inline-block;
-  content: "";
-  width: rem(30); 
-  text-align: center;
-  cursor: pointer;
+.m-message__status {
 
-  &--disabled {
-    width: rem(30);
+  li {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    content: "";
+  }
+
+  a {
+    display: inline-block;
     height: rem(15);
+    width: rem(30); 
+    line-height: rem(15);
+  }
+
+  .m-status__plus {
     background: url(../img/plus.png) center no-repeat;
+  }
+
+  .m-status__equals {
+    background: url(../img/eq.png) center no-repeat;
+  }
+
+  .m-status__minus {
+    background: url(../img/minus.png) center no-repeat;
   }
 
 }
 
 .m-status__plus--enabled::before {
-  @extend .m-status__plus;
+  // @extend .m-status__plus;
   position: absolute;
+  display: inline-block;
+  content: "";
   top: rem(-20); 
   left: 25%;
   width: rem(15);
@@ -222,24 +247,8 @@
   background: url(../img/plus-a.png);
 }
 
-.m-status__equals {
-  position: relative;
-  display: inline-block;
-  content: "";
-  width: rem(30);
-  text-align: center; 
-  cursor: pointer;
-
-  &--disabled {
-    width: rem(30);
-    height: rem(15);
-    background: url(../img/eq.png) center no-repeat;
-  }
-  
-}
-
 .m-status__equals--enabled::before {
-  @extend .m-status__equals;
+  // @extend .m-status__equals;
   position: absolute;
   top: rem(-20); 
   left: 25%; 
@@ -248,24 +257,8 @@
   background: url(../img/eq-a.png);
 }
 
-.m-status__minus {
-  position: relative;
-  display: inline-block;
-  content: "";
-  width: rem(30); 
-  text-align: center;
-  cursor: pointer;
-
-  &--disabled { 
-    width: rem(30);
-    height: rem(15);
-    background: url(../img/minus.png) center no-repeat;
-  }
-
-}
-
 .m-status__minus--enabled::before {
-  @extend .m-status__minus;
+  // @extend .m-status__minus;
   position: absolute;
   top: rem(-20); 
   left: 25%;

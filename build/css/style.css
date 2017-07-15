@@ -66,19 +66,21 @@
   .m-message__editer {
     display: inline-block; }
     .m-message__editer li {
-      display: inline-block;
       content: "";
       margin-left: 0.625rem;
       cursor: pointer; }
   .m-message__edit {
+    display: none;
     width: 0.6875rem;
     height: 0.6875rem;
     background: url(../img/edit.png); }
   .m-message__delete {
+    display: none;
     width: 0.5625rem;
     height: 0.6875rem;
     background: url(../img/del.png); }
   .m-message__pin {
+    display: inline-block;
     width: 0.8125rem;
     height: 0.75rem;
     background: url(../img/holder-off.png); }
@@ -96,6 +98,9 @@
 .m-message--you .m-message__content::before {
   right: -0.8125rem;
   left: initial; }
+
+.m-message--you .m-message__editer li {
+  display: inline-block; }
 
 .snippet .m-message__content-header {
   border-top: 0.1875rem solid #3189d6;
@@ -161,37 +166,36 @@
   font-size: 0.75rem;
   color: #404040; }
 
-.m-status__plus, .m-status__plus--enabled::before {
-  position: relative;
+.m-message__status li {
   display: inline-block;
-  content: "";
-  width: 1.875rem;
   text-align: center;
-  cursor: pointer; }
-  .m-status__plus--disabled {
-    width: 1.875rem;
-    height: 0.9375rem;
-    background: url(../img/plus.png) center no-repeat; }
+  position: relative;
+  content: ""; }
+
+.m-message__status a {
+  display: inline-block;
+  height: 0.9375rem;
+  width: 1.875rem;
+  line-height: 0.9375rem; }
+
+.m-message__status .m-status__plus {
+  background: url(../img/plus.png) center no-repeat; }
+
+.m-message__status .m-status__equals {
+  background: url(../img/eq.png) center no-repeat; }
+
+.m-message__status .m-status__minus {
+  background: url(../img/minus.png) center no-repeat; }
 
 .m-status__plus--enabled::before {
   position: absolute;
+  display: inline-block;
+  content: "";
   top: -1.25rem;
   left: 25%;
   width: 0.9375rem;
   height: 1.125rem;
   background: url(../img/plus-a.png); }
-
-.m-status__equals, .m-status__equals--enabled::before {
-  position: relative;
-  display: inline-block;
-  content: "";
-  width: 1.875rem;
-  text-align: center;
-  cursor: pointer; }
-  .m-status__equals--disabled {
-    width: 1.875rem;
-    height: 0.9375rem;
-    background: url(../img/eq.png) center no-repeat; }
 
 .m-status__equals--enabled::before {
   position: absolute;
@@ -200,18 +204,6 @@
   width: 0.9375rem;
   height: 1.125rem;
   background: url(../img/eq-a.png); }
-
-.m-status__minus, .m-status__minus--enabled::before {
-  position: relative;
-  display: inline-block;
-  content: "";
-  width: 1.875rem;
-  text-align: center;
-  cursor: pointer; }
-  .m-status__minus--disabled {
-    width: 1.875rem;
-    height: 0.9375rem;
-    background: url(../img/minus.png) center no-repeat; }
 
 .m-status__minus--enabled::before {
   position: absolute;
