@@ -17,34 +17,34 @@
     <header class="m-header">Header</header>
     <aside class="m-aside">Aside</aside>
     <main class="m-main">
-
-      <div class="m-message m-message--else pinned">
+<!-- pinned -->
+      <div class="m-message">
 
         <a href="#" class="m-message__avatar avatar-l">
           <span class="status"></span>
           <img class="button-round--image" src="https://pbs.twimg.com/profile_images/677544618326556672/WID2m1_a.png" alt="avatar">
         </a>
 
-        <div class="m-message__content corner">
+        <div class="m-message__content">
           <div class="m-message__content-header">
             <div class="m-message__sender-status">
               <span class="m-message__sender">Inna Avanesian</span>
-              <span>в</span>
-              <span class="m-message__time">12:31</span>
-              <span class="m-message__date">17 Апрель 2017</span>
-              <div class="m-message__editer">
-                <!-- <span class="m-message__edit"></span> -->
-                <!-- <span class="m-message__delete"></span> -->
-                <span class="m-message__holder--on"></span>
-              </div>
+              в
+              <time class="m-message__time">12:31</time>
+              <time>17 Апрель 2017</time>
+              <ul class="m-message__editer">
+                <li class="m-message__edit"></li>
+                <li class="m-message__delete"></li>
+                <li class="m-message__pin"></li>
+              </ul>
             </div>
-            <div class="m-message__status">
-              <span class="m-status__plus m-status__plus--disabled"></span>
-              <span class="m-status__equals m-status__equals--disabled"></span>
-              <span class="m-status__minus m-status__minus--disabled"></span>
-            </div>
+            <ul class="m-message__status">
+              <li><a href="#" class="m-status__plus"></a></li>
+              <li><a href="#" class="m-status__equals"></a></li>
+              <li><a href="#" class="m-status__minus"></a></li>
+            </ul>
             <div class="m-message__seen">
-              <span>Просмотрено</span>
+              Просмотрено
               <span class="m-message__seen-number">12</span>
             </div>
           </div>
@@ -54,34 +54,34 @@
         </div>
 
       </div>
-
-      <div class="m-message m-message--else snippet">
+<!-- snippet -->
+      <div class="m-message">
 
         <a href="#" class="m-message__avatar avatar-l">
           <span class="status"></span>
           <img class="button-round--image" src="https://pbs.twimg.com/profile_images/677544618326556672/WID2m1_a.png" alt="avatar">
         </a>
 
-        <div class="m-message__content corner">
+        <div class="m-message__content">
           <div class="m-message__content-header">
             <div class="m-message__sender-status">
               <span class="m-message__sender">Inna Avanesian</span>
-              <span>в</span>
-              <span class="m-message__time">12:31</span>
-              <span class="m-message__date">17 Апрель 2017</span>
-              <div class="m-message__editer">
-                <!-- <span class="m-message__edit"></span> -->
-                <!-- <span class="m-message__delete"></span> -->
-                <span class="m-message__holder--off"></span>
-              </div>
+              в
+              <time class="m-message__time">12:31</time>
+              <time>17 Апрель 2017</time>
+              <ul class="m-message__editer">
+                <li class="m-message__edit"></li>
+                <li class="m-message__delete"></li>
+                <li class="m-message__pin"></li>
+              </ul>
             </div>
-            <div class="m-message__status">
-              <span class="m-status__plus m-status__plus--enabled">13</span>
-              <span class="m-status__equals m-status__equals--enabled">4</span>
-              <span class="m-status__minus m-status__minus--enabled">0</span>
-            </div>
+            <ul class="m-message__status">
+              <li><a href="#" class="m-status__plus">13</a></li>
+              <li><a href="#" class="m-status__equals">4</a</li>
+              <li><a href="#" class="m-status__minus">0</a></li>
+            </ul>
             <div class="m-message__seen">
-              <span>Просмотрено</span>
+              Просмотрено
               <span class="m-message__seen-number">12</span>
             </div>
           </div>
@@ -125,7 +125,7 @@
               &lt;div class="m-message__editer"&gt;
                 &lt;!-- &lt;span class="m-message__edit"&gt;&lt;/span&gt; --&gt;
                 &lt;!-- &lt;span class="m-message__delete"&gt;&lt;/span&gt; --&gt;
-                &lt;span class="m-message__holder--on"&gt;&lt;/span&gt;
+                &lt;span class="m-message__pin"&gt;&lt;/span&gt;
               &lt;/div&gt;
             &lt;/div&gt;
             &lt;div class="m-message__status"&gt;
@@ -164,26 +164,26 @@
           <img class="button-round--image" src="https://pbs.twimg.com/profile_images/677544618326556672/WID2m1_a.png" alt="avatar">
         </a>
 
-        <div class="m-message__content corner">
+        <div class="m-message__content">
           <div class="m-message__content-header">
             <div class="m-message__sender-status">
               <span class="m-message__sender">Вы</span>
-              <span>в</span>
-              <span class="m-message__time">12:31</span>
-              <span class="m-message__date">17 Апрель 2017</span>
-              <div class="m-message__editer">
-                <span class="m-message__edit"></span>
-                <span class="m-message__delete"></span>
-                <span class="m-message__holder--off"></span>
-              </div>
+              в
+              <time class="m-message__time">12:31</time>
+              <time>17 Апрель 2017</time>
+              <ul class="m-message__editer">
+                <li class="m-message__edit"></li>
+                <li class="m-message__delete"></li>
+                <li class="m-message__pin"></li>
+              </ul>
             </div>
-            <div class="m-message__status">
-              <span class="m-status__plus m-status__plus--disabled"></span>
-              <span class="m-status__equals m-status__equals--disabled"></span>
-              <span class="m-status__minus m-status__minus--disabled"></span>
-            </div>
+            <ul class="m-message__status">
+              <li><a href="#" class="m-status__plus"></a></li>
+              <li><a href="#" class="m-status__equals"></a></li>
+              <li><a href="#" class="m-status__minus"></a></li>
+            </ul>
             <div class="m-message__seen">
-              <span>Просмотрено</span>
+              Просмотрено
               <span class="m-message__seen-number">12</span>
             </div>
           </div>

@@ -33,37 +33,84 @@
 .m-message {
   display: flex;
   margin-bottom: 1.25rem; }
+  .m-message__avatar {
+    flex: 1 0 auto;
+    order: 0;
+    margin-right: 1.4375rem; }
+  .m-message__content {
+    min-width: 47.14vw;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #fff;
+    border-radius: 0.1875rem;
+    box-shadow: 0 0.0625rem 0.0625rem #cccccc; }
+  .m-message__content::after {
+    left: -0.625rem;
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 0.625rem solid transparent;
+    border-top: 0.625rem solid #fff; }
+  .m-message__content::before {
+    left: -0.8125rem; }
+  .m-message__content-header {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.8125rem;
+    padding: 0 0.625rem 0 0.625rem;
+    font-size: 0.75rem;
+    color: gray;
+    border-bottom: 0.0625rem solid #cccccc; }
+  .m-message__editer {
+    display: inline-block; }
+    .m-message__editer li {
+      content: "";
+      margin-left: 0.625rem;
+      cursor: pointer; }
+  .m-message__edit {
+    display: none;
+    width: 0.6875rem;
+    height: 0.6875rem;
+    background: url(../img/edit.png); }
+  .m-message__delete {
+    display: none;
+    width: 0.5625rem;
+    height: 0.6875rem;
+    background: url(../img/del.png); }
+  .m-message__pin {
+    display: inline-block;
+    width: 0.8125rem;
+    height: 0.75rem;
+    background: url(../img/holder-off.png); }
 
-.m-message__avatar {
-  flex: 1 0 auto; }
+.m-message--you .m-message__avatar {
+  order: 1;
+  margin-left: 1.4375rem;
+  margin-right: initial; }
 
-.m-message__content-header {
-  display: flex;
-  box-sizing: border-box;
-  justify-content: space-between;
-  align-items: center;
-  height: 1.8125rem;
-  padding: 0 0.625rem 0 0.625rem;
-  font-size: 0.75rem;
-  color: gray;
-  border-bottom: 0.0625rem solid #cccccc; }
+.m-message--you .m-message__content::after {
+  border-left: 0.625rem solid #fff;
+  right: -0.625rem;
+  left: initial; }
 
-.corner::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  border: 0.625rem solid transparent;
-  border-top: 0.625rem solid #fff; }
+.m-message--you .m-message__content::before {
+  right: -0.8125rem;
+  left: initial; }
+
+.m-message--you .m-message__editer li {
+  display: inline-block; }
 
 .snippet .m-message__content-header {
   border-top: 0.1875rem solid #3189d6;
   background-color: rgba(149, 213, 225, 0.1); }
 
-.snippet .corner::after {
+.snippet .m-message__content::after {
   top: 0.1875rem;
   border-top: 0.625rem solid #EFFDFE; }
 
-.snippet .corner::before {
+.snippet .m-message__content::before {
   content: "";
   position: absolute;
   top: 0;
@@ -73,46 +120,19 @@
 .pinned .m-message__content-header {
   border-top: 0.1875rem solid #f25520; }
 
-.pinned .corner::after {
+.pinned .m-message__content::after {
   top: 0.1875rem;
   border-top: 0.625rem solid #fff; }
 
-.pinned .corner::before {
+.pinned .m-message__content::before {
   content: "";
   position: absolute;
   top: 0;
   border: 0.625rem solid transparent;
   border-top: 0.5625rem solid #f25520; }
 
-.m-message--else .m-message__avatar {
-  order: 0;
-  margin-right: 1.4375rem; }
-
-.m-message--else .corner::after {
-  border-right: 0.625rem solid #fff;
-  left: -0.625rem; }
-
-.m-message--else .corner::before {
-  left: -0.8125rem; }
-
-.m-message--you .m-message__avatar {
-  order: 1;
-  margin-left: 1.4375rem; }
-
-.m-message--you .corner::after {
-  border-left: 0.625rem solid #fff;
-  right: -0.625rem; }
-
-.m-message--you .corner::before {
-  right: -0.8125rem; }
-
-.m-message__content {
-  min-width: 47.14vw;
-  box-sizing: border-box;
-  position: relative;
-  background-color: #fff;
-  border-radius: 0.1875rem;
-  box-shadow: 0 0.0625rem 0.0625rem #cccccc; }
+.pinned .m-message__pin {
+  background: url(../img/holder-on.png); }
 
 .m-message__content-body {
   position: relative;
@@ -146,76 +166,36 @@
   font-size: 0.75rem;
   color: #404040; }
 
-.m-message__editer {
-  display: inline-block; }
-
-.m-message__holder--on {
+.m-message__status li {
   display: inline-block;
-  content: "";
-  width: 0.8125rem;
-  height: 0.75rem;
-  margin-left: 0.625rem;
-  background: url(../img/holder-on.png);
-  cursor: pointer; }
-
-.m-message__holder--off {
-  display: inline-block;
-  content: "";
-  width: 0.8125rem;
-  height: 0.75rem;
-  margin-left: 0.625rem;
-  background: url(../img/holder-off.png);
-  cursor: pointer; }
-
-.m-message__edit {
-  display: inline-block;
-  content: "";
-  width: 0.6875rem;
-  height: 0.6875rem;
-  margin-left: 0.625rem;
-  background: url(../img/edit.png);
-  cursor: pointer; }
-
-.m-message__delete {
-  display: inline-block;
-  content: "";
-  width: 0.5625rem;
-  height: 0.6875rem;
-  margin-left: 0.625rem;
-  background: url(../img/del.png);
-  cursor: pointer; }
-
-.m-status__plus, .m-status__plus--enabled::before {
-  position: relative;
-  display: inline-block;
-  content: "";
-  width: 1.875rem;
   text-align: center;
-  cursor: pointer; }
-  .m-status__plus--disabled {
-    width: 1.875rem;
-    height: 0.9375rem;
-    background: url(../img/plus.png) center no-repeat; }
+  position: relative;
+  content: ""; }
+
+.m-message__status a {
+  display: inline-block;
+  height: 0.9375rem;
+  width: 1.875rem;
+  line-height: 0.9375rem; }
+
+.m-message__status .m-status__plus {
+  background: url(../img/plus.png) center no-repeat; }
+
+.m-message__status .m-status__equals {
+  background: url(../img/eq.png) center no-repeat; }
+
+.m-message__status .m-status__minus {
+  background: url(../img/minus.png) center no-repeat; }
 
 .m-status__plus--enabled::before {
   position: absolute;
+  display: inline-block;
+  content: "";
   top: -1.25rem;
   left: 25%;
   width: 0.9375rem;
   height: 1.125rem;
   background: url(../img/plus-a.png); }
-
-.m-status__equals, .m-status__equals--enabled::before {
-  position: relative;
-  display: inline-block;
-  content: "";
-  width: 1.875rem;
-  text-align: center;
-  cursor: pointer; }
-  .m-status__equals--disabled {
-    width: 1.875rem;
-    height: 0.9375rem;
-    background: url(../img/eq.png) center no-repeat; }
 
 .m-status__equals--enabled::before {
   position: absolute;
@@ -224,18 +204,6 @@
   width: 0.9375rem;
   height: 1.125rem;
   background: url(../img/eq-a.png); }
-
-.m-status__minus, .m-status__minus--enabled::before {
-  position: relative;
-  display: inline-block;
-  content: "";
-  width: 1.875rem;
-  text-align: center;
-  cursor: pointer; }
-  .m-status__minus--disabled {
-    width: 1.875rem;
-    height: 0.9375rem;
-    background: url(../img/minus.png) center no-repeat; }
 
 .m-status__minus--enabled::before {
   position: absolute;

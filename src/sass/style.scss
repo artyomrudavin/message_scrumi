@@ -3,33 +3,111 @@
 @import "grid";
 // @import "grid-full";
 
+
+
 .m-message {
   display: flex;
   margin-bottom: rem(20);
+
+  &__avatar {
+    flex: 1 0 auto;
+    order: 0;
+    margin-right: rem(23); 
+  }
+
+  &__content {
+    min-width: 47.14vw; 
+    box-sizing: border-box;
+    position: relative;
+    background-color: $white;
+    border-radius: rem(3);
+    box-shadow: 0 rem(1) rem(1) $gray-80; 
+  }
+
+  &__content::after {
+    left: rem(-10);
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    border: rem(10) solid transparent;
+    border-top: rem(10) solid $white;
+  }
+
+  &__content::before {
+    left: rem(-13);
+  }
+
+  &__content-header {
+    display: flex;
+    box-sizing: border-box; 
+    justify-content: space-between;
+    align-items: center;
+    height: rem(29);
+    padding: 0 rem(10) 0 rem(10);
+    font-size: rem(12); 
+    color: $gray-50;
+    border-bottom: rem(1) solid $gray-80;
+  }
+
+  &__editer {
+    display: inline-block;
+
+    li {
+      content: "";
+      margin-left: rem(10);
+      cursor: pointer;
+    }
+  }
+
+  &__edit {
+    display: none;
+    width: rem(11);
+    height: rem(11);
+    background: url(../img/edit.png);
+  }
+
+  &__delete {
+    display: none;
+    width: rem(9);
+    height: rem(11);
+    background: url(../img/del.png);
+  }
+
+  &__pin {
+    display: inline-block;
+    width: rem(13);
+    height: rem(12);
+    background: url(../img/holder-off.png);
+  }
+
 }
 
-.m-message__avatar {
-  flex: 1 0 auto;
-}
+.m-message--you {
 
-.m-message__content-header {
-  display: flex;
-  box-sizing: border-box; 
-  justify-content: space-between;
-  align-items: center;
-  height: rem(29);
-  padding: 0 rem(10) 0 rem(10);
-  font-size: rem(12); 
-  color: $gray-50;
-  border-bottom: rem(1) solid $gray-80;
-}
+  .m-message__avatar {
+    order: 1;
+    margin-left: rem(23);
+    margin-right: initial;
+  }
 
-.corner::after {
-  content: ""; 
-  position: absolute; 
-  top: 0; 
-  border: rem(10) solid transparent;
-  border-top: rem(10) solid $white; 
+  .m-message__content::after {
+    border-left: rem(10) solid $white;
+    right: rem(-10); 
+    left: initial;
+  }
+
+  .m-message__content::before {
+    right: rem(-13);
+    left: initial;
+  }
+
+  .m-message__editer {
+
+    li {
+      display: inline-block;
+    }
+  }
+
 }
 
 .snippet {
@@ -39,12 +117,12 @@
     background-color: rgba($blue-light, .1);
   }
 
-  .corner::after {
+  .m-message__content::after {
     top: rem(3);
-    border-top: rem(10) solid #EFFDFE;  
+    border-top: rem(10) solid #EFFDFE; 
   }
 
-  .corner::before {
+  .m-message__content::before {
     content: ""; 
     position: absolute; 
     top: 0; 
@@ -60,12 +138,12 @@
     border-top: rem(3) solid $red;
   }
 
-  .corner::after {
+  .m-message__content::after {
     top: rem(3);
     border-top: rem(10) solid $white;  
   } 
 
-  .corner::before {
+  .m-message__content::before {
     content: ""; 
     position: absolute; 
     top: 0; 
@@ -73,51 +151,10 @@
     border-top: rem(9) solid $red;
   }
 
-}
-
-.m-message--else {
-
-  .m-message__avatar {
-    order: 0;
-    margin-right: rem(23); 
+  .m-message__pin {
+    background: url(../img/holder-on.png);
   }
 
-  .corner::after {
-    border-right: rem(10) solid $white;
-    left: rem(-10);
-  }
-
-  .corner::before {
-    left: rem(-13);
-  }
-
-}
-
-.m-message--you {
-
-  .m-message__avatar {
-    order: 1;
-    margin-left: rem(23); 
-  }
-
-  .corner::after {
-    border-left: rem(10) solid $white;
-    right: rem(-10); 
-  }
-
-  .corner::before {
-    right: rem(-13);
-  }
-
-}
-
-.m-message__content {
-  min-width: 47.14vw; 
-  box-sizing: border-box;
-  position: relative;
-  background-color: $white;
-  border-radius: rem(3);
-  box-shadow: 0 rem(1) rem(1) $gray-80; 
 }
 
 .m-message__content-body {
@@ -168,69 +205,41 @@
   color: $gray-25; 
 }
 
-.m-message__editer {
-  display: inline-block; 
-}
+.m-message__status {
 
-.m-message__holder--on {
-  display: inline-block;
-  content: "";
-  width: rem(13);
-  height: rem(12);
-  margin-left: rem(10); 
-  background: url(../img/holder-on.png);
-  cursor: pointer;
-}
+  li {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    content: "";
+  }
 
-.m-message__holder--off {
-  display: inline-block;
-  content: "";
-  width: rem(13);
-  height: rem(12);
-  margin-left: rem(10);
-  background: url(../img/holder-off.png);
-  cursor: pointer;
-}
-
-.m-message__edit {
-  display: inline-block;
-  content: "";
-  width: rem(11);
-  height: rem(11);
-  margin-left: rem(10);
-  background: url(../img/edit.png);
-  cursor: pointer;
-}
-
-.m-message__delete {
-  display: inline-block;
-  content: "";
-  width: rem(9);
-  height: rem(11);
-  margin-left: rem(10); 
-  background: url(../img/del.png);
-  cursor: pointer;
-}
-
-.m-status__plus {
-  position: relative;
-  display: inline-block;
-  content: "";
-  width: rem(30); 
-  text-align: center;
-  cursor: pointer;
-
-  &--disabled {
-    width: rem(30);
+  a {
+    display: inline-block;
     height: rem(15);
+    width: rem(30); 
+    line-height: rem(15);
+  }
+
+  .m-status__plus {
     background: url(../img/plus.png) center no-repeat;
+  }
+
+  .m-status__equals {
+    background: url(../img/eq.png) center no-repeat;
+  }
+
+  .m-status__minus {
+    background: url(../img/minus.png) center no-repeat;
   }
 
 }
 
 .m-status__plus--enabled::before {
-  @extend .m-status__plus;
+  // @extend .m-status__plus;
   position: absolute;
+  display: inline-block;
+  content: "";
   top: rem(-20); 
   left: 25%;
   width: rem(15);
@@ -238,24 +247,8 @@
   background: url(../img/plus-a.png);
 }
 
-.m-status__equals {
-  position: relative;
-  display: inline-block;
-  content: "";
-  width: rem(30);
-  text-align: center; 
-  cursor: pointer;
-
-  &--disabled {
-    width: rem(30);
-    height: rem(15);
-    background: url(../img/eq.png) center no-repeat;
-  }
-  
-}
-
 .m-status__equals--enabled::before {
-  @extend .m-status__equals;
+  // @extend .m-status__equals;
   position: absolute;
   top: rem(-20); 
   left: 25%; 
@@ -264,24 +257,8 @@
   background: url(../img/eq-a.png);
 }
 
-.m-status__minus {
-  position: relative;
-  display: inline-block;
-  content: "";
-  width: rem(30); 
-  text-align: center;
-  cursor: pointer;
-
-  &--disabled { 
-    width: rem(30);
-    height: rem(15);
-    background: url(../img/minus.png) center no-repeat;
-  }
-
-}
-
 .m-status__minus--enabled::before {
-  @extend .m-status__minus;
+  // @extend .m-status__minus;
   position: absolute;
   top: rem(-20); 
   left: 25%;
