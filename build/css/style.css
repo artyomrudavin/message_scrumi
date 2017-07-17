@@ -69,21 +69,37 @@
       content: "";
       margin-left: 0.625rem;
       cursor: pointer; }
-  .m-message__edit {
-    display: none;
-    width: 0.6875rem;
-    height: 0.6875rem;
-    background: url(../img/edit.png); }
-  .m-message__delete {
-    display: none;
-    width: 0.5625rem;
-    height: 0.6875rem;
-    background: url(../img/del.png); }
-  .m-message__pin {
+    .m-message__editer .ico-edit,
+    .m-message__editer .ico-del {
+      display: none; }
+  .m-message__sender, .m-message__time, .m-message__seen-number {
+    font-size: 0.75rem;
+    color: #404040; }
+  .m-message__status li {
     display: inline-block;
-    width: 0.8125rem;
-    height: 0.75rem;
-    background: url(../img/holder-off.png); }
+    text-align: center;
+    content: ""; }
+  .m-message__status a {
+    position: relative;
+    display: inline-block;
+    height: 1.125rem;
+    width: 1.875rem;
+    line-height: 1.125rem;
+    color: gray; }
+  .m-message__status img {
+    vertical-align: middle; }
+  .m-message__status.active img {
+    width: 15px;
+    height: 18px;
+    position: absolute;
+    top: -1.25rem;
+    left: 25%; }
+  .m-message__status.active .ico-plus {
+    background-position: -1px -70px; }
+  .m-message__status.active .ico-eq {
+    background-position: -1px -0px; }
+  .m-message__status.active .ico-minus {
+    background-position: -1px -35px; }
 
 .m-message--you .m-message__avatar {
   order: 1;
@@ -102,37 +118,37 @@
 .m-message--you .m-message__editer li {
   display: inline-block; }
 
-.snippet .m-message__content-header {
+.m-message--snippet .m-message__content-header {
   border-top: 0.1875rem solid #3189d6;
   background-color: rgba(149, 213, 225, 0.1); }
 
-.snippet .m-message__content::after {
+.m-message--snippet .m-message__content::after {
   top: 0.1875rem;
   border-top: 0.625rem solid #EFFDFE; }
 
-.snippet .m-message__content::before {
+.m-message--snippet .m-message__content::before {
   content: "";
   position: absolute;
   top: 0;
   border: 0.625rem solid transparent;
   border-top: 0.5625rem solid #3189d6; }
 
-.pinned .m-message__content-header {
+.m-message--pinned .m-message__content-header {
   border-top: 0.1875rem solid #f25520; }
 
-.pinned .m-message__content::after {
+.m-message--pinned .m-message__content::after {
   top: 0.1875rem;
   border-top: 0.625rem solid #fff; }
 
-.pinned .m-message__content::before {
+.m-message--pinned .m-message__content::before {
   content: "";
   position: absolute;
   top: 0;
   border: 0.625rem solid transparent;
   border-top: 0.5625rem solid #f25520; }
 
-.pinned .m-message__pin {
-  background: url(../img/holder-on.png); }
+.m-message--pinned .ico-pin {
+  background-position: -1px -118px; }
 
 .m-message__content-body {
   position: relative;
@@ -161,54 +177,3 @@
     border-radius: 0.625rem; }
   .m-content__snippet pre {
     padding: 0.625rem; }
-
-.m-message__sender, .m-message__time, .m-message__seen-number {
-  font-size: 0.75rem;
-  color: #404040; }
-
-.m-message__status li {
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  content: ""; }
-
-.m-message__status a {
-  display: inline-block;
-  height: 0.9375rem;
-  width: 1.875rem;
-  line-height: 0.9375rem; }
-
-.m-message__status .m-status__plus {
-  background: url(../img/plus.png) center no-repeat; }
-
-.m-message__status .m-status__equals {
-  background: url(../img/eq.png) center no-repeat; }
-
-.m-message__status .m-status__minus {
-  background: url(../img/minus.png) center no-repeat; }
-
-.m-status__plus--enabled::before {
-  position: absolute;
-  display: inline-block;
-  content: "";
-  top: -1.25rem;
-  left: 25%;
-  width: 0.9375rem;
-  height: 1.125rem;
-  background: url(../img/plus-a.png); }
-
-.m-status__equals--enabled::before {
-  position: absolute;
-  top: -1.25rem;
-  left: 25%;
-  width: 0.9375rem;
-  height: 1.125rem;
-  background: url(../img/eq-a.png); }
-
-.m-status__minus--enabled::before {
-  position: absolute;
-  top: -1.25rem;
-  left: 25%;
-  width: 0.9375rem;
-  height: 1.125rem;
-  background: url(../img/minus-a.png); }
