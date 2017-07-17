@@ -57,27 +57,63 @@
       margin-left: rem(10);
       cursor: pointer;
     }
+
+    .ico-edit,
+    .ico-del {
+      display: none;
+    }
   }
 
-  &__edit {
-    display: none;
-    width: rem(11);
-    height: rem(11);
-    background: url(../img/edit.png);
+  &__sender, &__time, &__seen-number {
+    font-size: rem(12);
+    color: $gray-25; 
   }
 
-  &__delete {
-    display: none;
-    width: rem(9);
-    height: rem(11);
-    background: url(../img/del.png);
-  }
+  &__status {
 
-  &__pin {
-    display: inline-block;
-    width: rem(13);
-    height: rem(12);
-    background: url(../img/holder-off.png);
+    li {
+      display: inline-block;
+      text-align: center;
+      content: "";
+    }
+
+    a {
+      position: relative;
+      display: inline-block;
+      height: rem(18);
+      width: rem(30); 
+      line-height: rem(18);
+      color: $gray-50;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    &.active {
+
+      img {
+        width: 15px;
+        height: 18px;
+        position: absolute;
+        top: rem(-20); 
+        left: 25%;
+      }
+
+      .ico-plus {
+        background-position: -1px -70px;
+      }
+
+      .ico-eq {
+        background-position: -1px -0px;
+      }
+
+      .ico-minus {
+        background-position: -1px -35px;
+      }
+
+    }
+
   }
 
 }
@@ -110,7 +146,7 @@
 
 }
 
-.snippet {
+.m-message--snippet {
 
   .m-message__content-header {
     border-top: rem(3) solid $blue;
@@ -132,7 +168,7 @@
 
 } 
 
-.pinned {
+.m-message--pinned {
 
   .m-message__content-header {
     border-top: rem(3) solid $red;
@@ -151,8 +187,8 @@
     border-top: rem(9) solid $red;
   }
 
-  .m-message__pin {
-    background: url(../img/holder-on.png);
+  .ico-pin {
+    background-position: -1px -118px;
   }
 
 }
@@ -198,71 +234,4 @@
     padding: rem(10);
     
   }
-}
-
-.m-message__sender, .m-message__time, .m-message__seen-number {
-  font-size: rem(12);
-  color: $gray-25; 
-}
-
-.m-message__status {
-
-  li {
-    display: inline-block;
-    text-align: center;
-    position: relative;
-    content: "";
-  }
-
-  a {
-    display: inline-block;
-    height: rem(15);
-    width: rem(30); 
-    line-height: rem(15);
-  }
-
-  .m-status__plus {
-    background: url(../img/plus.png) center no-repeat;
-  }
-
-  .m-status__equals {
-    background: url(../img/eq.png) center no-repeat;
-  }
-
-  .m-status__minus {
-    background: url(../img/minus.png) center no-repeat;
-  }
-
-}
-
-.m-status__plus--enabled::before {
-  // @extend .m-status__plus;
-  position: absolute;
-  display: inline-block;
-  content: "";
-  top: rem(-20); 
-  left: 25%;
-  width: rem(15);
-  height: rem(18);
-  background: url(../img/plus-a.png);
-}
-
-.m-status__equals--enabled::before {
-  // @extend .m-status__equals;
-  position: absolute;
-  top: rem(-20); 
-  left: 25%; 
-  width: rem(15);
-  height: rem(18);
-  background: url(../img/eq-a.png);
-}
-
-.m-status__minus--enabled::before {
-  // @extend .m-status__minus;
-  position: absolute;
-  top: rem(-20); 
-  left: 25%;
-  width: rem(15);
-  height: rem(18);
-  background: url(../img/minus-a.png);
 }
