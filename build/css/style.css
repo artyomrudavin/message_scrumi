@@ -33,7 +33,7 @@
 .m-message {
   display: flex;
   margin-bottom: 1.25rem; }
-  .m-message__avatar {
+  .m-message .avatar-l {
     flex: 1 0 auto;
     order: 0;
     margin-right: 1.4375rem; }
@@ -79,6 +79,18 @@
     display: inline-block;
     text-align: center;
     content: ""; }
+    .m-message__status li.active img {
+      width: 15px;
+      height: 18px;
+      position: absolute;
+      top: -1.25rem;
+      left: 25%; }
+    .m-message__status li.active .ico-plus {
+      background-position: -1px -70px; }
+    .m-message__status li.active .ico-eq {
+      background-position: -1px -0px; }
+    .m-message__status li.active .ico-minus {
+      background-position: -1px -35px; }
   .m-message__status a {
     position: relative;
     display: inline-block;
@@ -88,20 +100,8 @@
     color: gray; }
   .m-message__status img {
     vertical-align: middle; }
-  .m-message__status.active img {
-    width: 15px;
-    height: 18px;
-    position: absolute;
-    top: -1.25rem;
-    left: 25%; }
-  .m-message__status.active .ico-plus {
-    background-position: -1px -70px; }
-  .m-message__status.active .ico-eq {
-    background-position: -1px -0px; }
-  .m-message__status.active .ico-minus {
-    background-position: -1px -35px; }
 
-.m-message--you .m-message__avatar {
+.m-message--you .avatar-l {
   order: 1;
   margin-left: 1.4375rem;
   margin-right: initial; }

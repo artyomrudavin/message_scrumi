@@ -9,7 +9,7 @@
   display: flex;
   margin-bottom: rem(20);
 
-  &__avatar {
+  .avatar-l {
     flex: 1 0 auto;
     order: 0;
     margin-right: rem(23); 
@@ -75,6 +75,30 @@
       display: inline-block;
       text-align: center;
       content: "";
+      
+      &.active {
+
+        img {
+          width: 15px;
+          height: 18px;
+          position: absolute;
+          top: rem(-20); 
+          left: 25%;
+        }
+
+        .ico-plus {
+          background-position: -1px -70px;
+        }
+
+        .ico-eq {
+          background-position: -1px -0px;
+        }
+
+        .ico-minus {
+          background-position: -1px -35px;
+        }
+
+      }
     }
 
     a {
@@ -90,37 +114,13 @@
       vertical-align: middle;
     }
 
-    &.active {
-
-      img {
-        width: 15px;
-        height: 18px;
-        position: absolute;
-        top: rem(-20); 
-        left: 25%;
-      }
-
-      .ico-plus {
-        background-position: -1px -70px;
-      }
-
-      .ico-eq {
-        background-position: -1px -0px;
-      }
-
-      .ico-minus {
-        background-position: -1px -35px;
-      }
-
-    }
-
   }
 
 }
 
 .m-message--you {
 
-  .m-message__avatar {
+  .avatar-l {
     order: 1;
     margin-left: rem(23);
     margin-right: initial;
