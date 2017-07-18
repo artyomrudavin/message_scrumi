@@ -47,6 +47,11 @@
     font-size: rem(12); 
     color: $gray-50;
     border-bottom: rem(1) solid $gray-80;
+
+    span {
+      font-size: rem(12);
+      color: $gray-25;
+    }
   }
 
   &__editer {
@@ -64,21 +69,48 @@
     }
   }
 
-  &__sender, &__time, &__seen-number {
-    font-size: rem(12);
-    color: $gray-25; 
-  }
-
   &__status {
 
     li {
       display: inline-block;
       text-align: center;
       content: "";
+
+      a {
+        position: relative;
+        display: inline-block;
+        height: rem(18);
+        width: rem(30); 
+        line-height: rem(18);
+        color: $gray-50;
+        vertical-align: middle;
+        
+        &::before {
+          display: inline-block;
+          content: "";
+          background: url('../img/sprite.png') no-repeat; 
+          overflow: hidden;
+          width: 15px; 
+          height: 15px;
+        }
+
+        &.ico-plus::before {
+          background-position: -1px -89px;
+        }
+
+        &.ico-eq::before {
+          background-position: -1px -19px;
+        }
+
+        &.ico-minus::before {
+          background-position: -1px -54px;
+        }
+
+      }
       
       &.active {
 
-        img {
+        a::before {
           width: 15px;
           height: 18px;
           position: absolute;
@@ -86,36 +118,21 @@
           left: 25%;
         }
 
-        .ico-plus {
+        .ico-plus::before {
           background-position: -1px -70px;
         }
 
-        .ico-eq {
+        .ico-eq::before {
           background-position: -1px -0px;
         }
 
-        .ico-minus {
+        .ico-minus::before {
           background-position: -1px -35px;
         }
 
       }
     }
-
-    a {
-      position: relative;
-      display: inline-block;
-      height: rem(18);
-      width: rem(30); 
-      line-height: rem(18);
-      color: $gray-50;
-    }
-
-    img {
-      vertical-align: middle;
-    }
-
   }
-
 }
 
 .m-message--you {

@@ -63,6 +63,9 @@
     font-size: 0.75rem;
     color: gray;
     border-bottom: 0.0625rem solid #cccccc; }
+    .m-message__content-header span {
+      font-size: 0.75rem;
+      color: #404040; }
   .m-message__editer {
     display: inline-block; }
     .m-message__editer li {
@@ -72,34 +75,43 @@
     .m-message__editer .ico-edit,
     .m-message__editer .ico-del {
       display: none; }
-  .m-message__sender, .m-message__time, .m-message__seen-number {
-    font-size: 0.75rem;
-    color: #404040; }
   .m-message__status li {
     display: inline-block;
     text-align: center;
     content: ""; }
-    .m-message__status li.active img {
+    .m-message__status li a {
+      position: relative;
+      display: inline-block;
+      height: 1.125rem;
+      width: 1.875rem;
+      line-height: 1.125rem;
+      color: gray;
+      vertical-align: middle; }
+      .m-message__status li a::before {
+        display: inline-block;
+        content: "";
+        background: url("../img/sprite.png") no-repeat;
+        overflow: hidden;
+        width: 15px;
+        height: 15px; }
+      .m-message__status li a.ico-plus::before {
+        background-position: -1px -89px; }
+      .m-message__status li a.ico-eq::before {
+        background-position: -1px -19px; }
+      .m-message__status li a.ico-minus::before {
+        background-position: -1px -54px; }
+    .m-message__status li.active a::before {
       width: 15px;
       height: 18px;
       position: absolute;
       top: -1.25rem;
       left: 25%; }
-    .m-message__status li.active .ico-plus {
+    .m-message__status li.active .ico-plus::before {
       background-position: -1px -70px; }
-    .m-message__status li.active .ico-eq {
+    .m-message__status li.active .ico-eq::before {
       background-position: -1px -0px; }
-    .m-message__status li.active .ico-minus {
+    .m-message__status li.active .ico-minus::before {
       background-position: -1px -35px; }
-  .m-message__status a {
-    position: relative;
-    display: inline-block;
-    height: 1.125rem;
-    width: 1.875rem;
-    line-height: 1.125rem;
-    color: gray; }
-  .m-message__status img {
-    vertical-align: middle; }
 
 .m-message--you .avatar-l {
   order: 1;
