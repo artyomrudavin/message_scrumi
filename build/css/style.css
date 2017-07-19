@@ -70,11 +70,20 @@
     display: inline-block; }
     .m-message__editer li {
       content: "";
+      background: url("../img/sprite.png") no-repeat;
+      width: 13px;
+      height: 12px;
       margin-left: 0.625rem;
       cursor: pointer; }
     .m-message__editer .ico-edit,
     .m-message__editer .ico-del {
       display: none; }
+    .m-message__editer .ico-pin {
+      background-position: -1px -105px; }
+    .m-message__editer .ico-del {
+      background-position: -1px -143px; }
+    .m-message__editer .ico-edit {
+      background-position: -1px -131px; }
   .m-message__status li {
     display: inline-block;
     text-align: center;

@@ -12,23 +12,23 @@
   .avatar-l {
     flex: 1 0 auto;
     order: 0;
-    margin-right: rem(23); 
+    margin-right: rem(23);
   }
 
   &__content {
-    min-width: 47.14vw; 
+    min-width: 47.14vw;
     box-sizing: border-box;
     position: relative;
     background-color: $white;
     border-radius: rem(3);
-    box-shadow: 0 rem(1) rem(1) $gray-80; 
+    box-shadow: 0 rem(1) rem(1) $gray-80;
   }
 
   &__content::after {
     left: rem(-10);
-    content: ""; 
-    position: absolute; 
-    top: 0; 
+    content: "";
+    position: absolute;
+    top: 0;
     border: rem(10) solid transparent;
     border-top: rem(10) solid $white;
   }
@@ -39,12 +39,12 @@
 
   &__content-header {
     display: flex;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
     height: rem(29);
     padding: 0 rem(10) 0 rem(10);
-    font-size: rem(12); 
+    font-size: rem(12);
     color: $gray-50;
     border-bottom: rem(1) solid $gray-80;
 
@@ -59,6 +59,9 @@
 
     li {
       content: "";
+      background: url('../img/sprite.png') no-repeat;
+      width: 13px;
+      height: 12px;
       margin-left: rem(10);
       cursor: pointer;
     }
@@ -66,6 +69,18 @@
     .ico-edit,
     .ico-del {
       display: none;
+    }
+
+    .ico-pin {
+      background-position: -1px -105px;
+    }
+
+    .ico-del {
+      background-position: -1px -143px;
+    }
+
+    .ico-edit {
+      background-position: -1px -131px;
     }
   }
 
@@ -80,17 +95,17 @@
         position: relative;
         display: inline-block;
         height: rem(18);
-        width: rem(30); 
+        width: rem(30);
         line-height: rem(18);
         color: $gray-50;
         vertical-align: middle;
-        
+
         &::before {
           display: inline-block;
           content: "";
-          background: url('../img/sprite.png') no-repeat; 
+          background: url('../img/sprite.png') no-repeat;
           overflow: hidden;
-          width: 15px; 
+          width: 15px;
           height: 15px;
         }
 
@@ -107,14 +122,14 @@
         }
 
       }
-      
+
       &.active {
 
         a::before {
           width: 15px;
           height: 18px;
           position: absolute;
-          top: rem(-20); 
+          top: rem(-20);
           left: 25%;
         }
 
@@ -145,7 +160,7 @@
 
   .m-message__content::after {
     border-left: rem(10) solid $white;
-    right: rem(-10); 
+    right: rem(-10);
     left: initial;
   }
 
@@ -172,18 +187,18 @@
 
   .m-message__content::after {
     top: rem(3);
-    border-top: rem(10) solid #EFFDFE; 
+    border-top: rem(10) solid #EFFDFE;
   }
 
   .m-message__content::before {
-    content: ""; 
-    position: absolute; 
-    top: 0; 
+    content: "";
+    position: absolute;
+    top: 0;
     border: rem(10) solid transparent;
-    border-top: rem(9) solid $blue; 
+    border-top: rem(9) solid $blue;
   }
 
-} 
+}
 
 .m-message--pinned {
 
@@ -193,13 +208,13 @@
 
   .m-message__content::after {
     top: rem(3);
-    border-top: rem(10) solid $white;  
-  } 
+    border-top: rem(10) solid $white;
+  }
 
   .m-message__content::before {
-    content: ""; 
-    position: absolute; 
-    top: 0; 
+    content: "";
+    position: absolute;
+    top: 0;
     border: rem(10) solid transparent;
     border-top: rem(9) solid $red;
   }
@@ -227,7 +242,7 @@
   max-height: 29vh;
   overflow: auto;
   border-left: rem(3) solid $blue-light;
-  background-color: rgba($blue-light, .1); 
+  background-color: rgba($blue-light, .1);
 
   &::-webkit-scrollbar-track
   {
@@ -249,6 +264,6 @@
 
   pre {
     padding: rem(10);
-    
+
   }
 }
