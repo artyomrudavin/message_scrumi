@@ -1,31 +1,24 @@
-.m-wrapper {
+body {
   display: grid;
   height: 100vh;
-  grid-template-rows: 14vh 1fr 4vh;
-  grid-template-columns: 1fr;
-  grid-template-areas: "header"
-                       "main"
-                       "footer"
+  grid-template-rows: 11.72vh 1fr 3.25vh;
+  grid-template-areas: "toolbar"
+  "main"
+  "footer"
 }
 
-.m-header{grid-area: header;}
-// .m_aside{grid-area: aside;}
+.toolbar{grid-area: toolbar;}
 .m-main{grid-area: main;}
-.m-footer{grid-area: footer;}
-
-.m-header, .m-footer {
-  background-color: #2f332e;
-}
-
-.m-aside {
-  background-color: #333; 
-}
+.footer{grid-area: footer;}
 
 .m-main {
-  padding: rem(20); 
   overflow: auto;
-  
-  &::-webkit-scrollbar { 
-    display: none; 
+
+  &::-webkit-scrollbar {
+    display: none;
   }
+}
+
+.toolbar, .footer {
+  background-color: #2f332e;
 }
