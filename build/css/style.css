@@ -26,6 +26,11 @@ body {
   display: grid;
   grid-template-columns: 1fr 25vw;
   grid-template-areas: "m-main__container aside"; }
+  .m-main__container {
+    padding: 1.25rem;
+    overflow: auto; }
+    .m-main__container::-webkit-scrollbar {
+      display: none; }
 
 .m_aside {
   grid-area: aside; }
@@ -35,12 +40,6 @@ body {
 
 .m-aside {
   background-color: #333; }
-
-.m-main__container {
-  padding: 1.25rem;
-  overflow: auto; }
-  .m-main__container::-webkit-scrollbar {
-    display: none; }
 
 /*     ----------------- Typography -------------------     */
 .m-message {

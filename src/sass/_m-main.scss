@@ -1,21 +1,29 @@
 .m-main {
   display: grid;
   grid-template-columns: 1fr 25vw;
-  grid-template-areas: "m-main__container aside"
+  grid-template-areas: "m-main__container aside";
+
+  &__container {
+    padding: rem(20);
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 
-.m_aside{grid-area: aside;}
-.m-main__container{grid-area: m-main__container;}
+.m_aside {
+  grid-area: aside;
+}
+
+.m-main__container {
+  grid-area: m-main__container;
+}
 
 .m-aside {
   background-color: #333;
 }
 
-.m-main__container {
-  padding: rem(20);
-  overflow: auto;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
+
