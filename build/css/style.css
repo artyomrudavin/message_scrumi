@@ -3,7 +3,7 @@ body {
   display: grid;
   height: 100vh;
   grid-template-rows: 11.72vh 1fr 3.25vh;
-  grid-template-areas: "toolbar" "main" "footer"; }
+  grid-template-areas: "toolbar" "main" "footer"; }
 
 .toolbar {
   grid-area: toolbar; }
@@ -14,55 +14,62 @@ body {
 .footer {
   grid-area: footer; }
 
-.m-main {
-  overflow: auto; }
-  .m-main::-webkit-scrollbar {
-    display: none; }
-
 .toolbar, .footer {
   background-color: #2f332e; }
 
 /*     ----------------- Typography -------------------     */
 .m-main {
   display: grid;
-  grid-template-columns: 1fr 25vw;
-  grid-template-areas: "m-main__container m-aside"; }
+  overflow: hidden; }
   .m-main__container {
-    overflow: auto; }
+    overflow: auto;
+    grid-area: m-main__container;
+    margin-right: -25vw;
+    padding-right: 0;
+    transition: all 0.3s;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "m-main__header" "m-message__container" "m-message__send"; }
     .m-main__container::-webkit-scrollbar {
       display: none; }
-
-.m-aside {
-  grid-area: m-aside;
-  background-color: #333;
-  transition: all 0.3s; }
-
-.m-main__container {
-  grid-area: m-main__container;
-  transition: all 0.3s; }
-
-.m-main--left {
-  grid-template-columns: 25vw 1fr;
-  grid-template-areas: "m-aside m-main__container"; }
-  .m-main--left.m-main--close .m-main__container {
-    margin-right: initial;
+  .m-main .m-aside {
+    grid-area: m-aside;
+    background-color: #333;
+    transition: all 0.3s; }
+  .m-main .m-main__header, .m-main .m-message__container, .m-main .m-message__send {
+    padding: 1.25rem 6.875rem; }
+  .m-main.m-main--right {
+    grid-template-columns: 1fr 25vw;
+    grid-template-areas: "m-main__container m-aside"; }
+    .m-main.m-main--right .m-aside {
+      margin-left: 25vw; }
+    .m-main.m-main--right.active .m-main__container {
+      margin-right: 0;
+      padding-right: 1.25rem; }
+    .m-main.m-main--right.active .m-aside {
+      margin-left: 0; }
+    .m-main.m-main--right.active .m-main__header, .m-main.m-main--right.active .m-message__container, .m-main.m-main--right.active .m-message__send {
+      padding: 1.25rem 0 1.25rem 6.875rem; }
+  .m-main.m-main--left {
+    grid-template-columns: 25vw 1fr;
+    grid-template-areas: "m-aside m-main__container";
     margin-left: -25vw; }
-  .m-main--left.m-main--close .m-aside {
-    margin-left: -25vw;
-    margin-right: 25vw; }
-
-.m-main--close .m-main__container {
-  margin-right: -25vw; }
-
-.m-main--close .m-aside {
-  margin-left: 25vw; }
-
-/*     ----------------- Typography -------------------     */
-.m-main__container {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  padding-right: 1.25rem;
-  grid-template-areas: "m-main__header" "m-message__container" "m-message__send"; }
+    .m-main.m-main--left .m-main__container {
+      margin-right: 0; }
+    .m-main.m-main--left .m-aside {
+      margin-right: 25vw; }
+    .m-main.m-main--left.active .m-main__container {
+      margin-left: 25vw;
+      padding-left: 1.25rem; }
+    .m-main.m-main--left.active .m-aside {
+      margin-right: -25vw;
+      margin-left: 25vw; }
+    .m-main.m-main--left.active .m-main__header, .m-main.m-main--left.active .m-message__container, .m-main.m-main--left.active .m-message__send {
+      padding: 1.25rem 6.875rem 1.25rem 0; }
+    .m-main.m-main--left.active .m-main__header {
+      padding-left: 4.375rem; }
+      .m-main.m-main--left.active .m-main__header a {
+        left: 0; }
 
 .m-main__header {
   grid-area: m-main__header;
@@ -76,7 +83,6 @@ body {
     content: "";
     position: absolute;
     left: 0.625rem;
-    display: block;
     background: url("../img/sprite.png") no-repeat -1px -143px;
     width: 13px;
     height: 12px; }
@@ -96,10 +102,8 @@ body {
 .m-message__send {
   grid-area: m-message__send;
   display: flex;
-  align-items: center;
-  position: relative; }
+  align-items: center; }
   .m-message__send textarea {
-    position: relative;
     width: 100%;
     height: 3.125rem; }
   .m-message__send a {
@@ -107,8 +111,8 @@ body {
     color: #404040;
     font-weight: bold;
     font-size: 0.875rem;
-    position: absolute;
-    right: 0.625rem; }
+    right: 0.625rem;
+    margin-left: -1.375rem; }
 
 /*     ----------------- Typography -------------------     */
 .m-message {
@@ -116,7 +120,8 @@ body {
   margin-bottom: 1.25rem; }
   .m-message .avatar-l {
     flex: 1 0 auto;
-    margin-right: 1.4375rem; }
+    margin-right: 1.4375rem;
+    margin-left: 0.3125rem; }
   .m-message__content {
     min-width: 47.14vw;
     box-sizing: border-box;
@@ -216,7 +221,7 @@ body {
 .m-message--you .avatar-l {
   order: 1;
   margin-left: 1.4375rem;
-  margin-right: initial; }
+  margin-right: 0.3125rem; }
 
 .m-message--you .m-message__content::after {
   border-left: 0.625rem solid #fff;

@@ -11,14 +11,6 @@ body {
 .m-main{grid-area: main;}
 .footer{grid-area: footer;}
 
-.m-main {
-  overflow: auto;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
 .toolbar, .footer {
   background-color: #2f332e;
 }

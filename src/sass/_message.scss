@@ -9,6 +9,7 @@
   .avatar-l {
     flex: 1 0 auto;
     margin-right: rem(23);
+    margin-left: rem(5);
   }
 
   &__content {
@@ -167,7 +168,7 @@
   .avatar-l {
     order: 1;
     margin-left: rem(23);
-    margin-right: initial;
+    margin-right: rem(5);
   }
 
   .m-message__content::after {
