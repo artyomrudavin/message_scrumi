@@ -1,104 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>m-scrumi</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/theme.css">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>m-scrumi</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="toolbar">Toolbar</header>
 <main class="m-main">
-  <aside class="m-aside">Aside</aside>
-  <section class="m-main__container">
+    <aside class="m-aside">Aside</aside>
+    <section class="m-main__container">
 
-    <div class="m-message m-message--pinned">
+        <header class="m-main__header">
+            <a href="#" class="m-del-chanel"></a>
+            <p class="m-header__heading">
+                <span>Channel name / </span>
+                Room name
+            </p>
+            <form action="">
+                <input type="search" name="m-search" id="m-search" placeholder="Search">
+            </form>
+        </header>
 
-      <a href="#" class="avatar-l">
-        <span class="status"></span>
-        <img class="button-round--image" src="https://pbs.twimg.com/profile_images/677544618326556672/WID2m1_a.png"
-             alt="avatar">
-      </a>
+        <main class="m-message__container">
 
-      <div class="m-message__content">
-        <div class="m-message__content-header">
-          <div class="m-message__sender-status">
-            <span>Inna Avanesian</span>
-            в
-            <time datetime="2017-04-17 12:31">
-              <span>12:31</span>
-              17 Апрель 2017
-            </time>
-            <ul class="m-message__editer">
-              <li class="ico-edit"></li>
-              <li class="ico-del"></li>
-              <li class="ico-pin"></li>
-            </ul>
-          </div>
-          <ul class="m-message__status">
-            <li><a href="#" class="ico-plus"></a></li>
-            <li><a href="#" class="ico-minus"></a></li>
-            <li><a href="#" class="ico-eq"></a></li>
-          </ul>
-          <div class="m-message__seen">
-            Просмотрено
-            <span>12</span>
-          </div>
-        </div>
-        <div class="m-message__content-body">
-          <p class="m-content__text">Donec viverra maximus urna, non aliquet sapien posuere sed. Proin ut nisl in
-            velit
-            scelerisque placerat. Aliquam fermentum massa placerat congue vehicula. Nam quis eros id ligula rutrum
-            rutrum non nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos</p>
-        </div>
-      </div>
+            <div class="m-message m-message--pinned">
 
-    </div>
+                <a href="#" class="avatar-l">
+                    <span class="status"></span>
+                    <img class="button-round--image"
+                         src="https://pbs.twimg.com/profile_images/677544618326556672/WID2m1_a.png"
+                         alt="avatar">
+                </a>
 
-    <div class="m-message m-message--snippet">
+                <div class="m-message__content">
+                    <div class="m-message__content-header">
+                        <div class="m-message__sender-status">
+                            <span>Inna Avanesian</span>
+                            в
+                            <time datetime="2017-04-17 12:31">
+                                <span>12:31</span>
+                                17 Апрель 2017
+                            </time>
+                            <ul class="m-message__editer">
+                                <li class="ico-edit"></li>
+                                <li class="ico-del"></li>
+                                <li class="ico-pin"></li>
+                            </ul>
+                        </div>
+                        <ul class="m-message__status">
+                            <li><a href="#" class="ico-plus"></a></li>
+                            <li><a href="#" class="ico-minus"></a></li>
+                            <li><a href="#" class="ico-eq"></a></li>
+                        </ul>
+                        <div class="m-message__seen">
+                            Просмотрено
+                            <span>12</span>
+                        </div>
+                    </div>
+                    <div class="m-message__content-body">
+                        <p class="m-content__text">Donec viverra maximus urna, non aliquet sapien posuere sed. Proin ut
+                            nisl in
+                            velit
+                            scelerisque placerat. Aliquam fermentum massa placerat congue vehicula. Nam quis eros id
+                            ligula rutrum
+                            rutrum non nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                            inceptos</p>
+                    </div>
+                </div>
 
-      <a href="#" class="avatar-l">
-        <span class="status"></span>
-        <img class="button-round--image" src="https://pbs.twimg.com/profile_images/677544618326556672/WID2m1_a.png"
-             alt="avatar">
-      </a>
+            </div>
 
-      <div class="m-message__content">
-        <div class="m-message__content-header">
-          <div class="m-message__sender-status">
-            <span>Inna Avanesian</span>
-            в
-            <time datetime="2017-04-17 12:31">
-              <span>12:31</span>
-              17 Апрель 2017
-            </time>
-            <ul class="m-message__editer">
-              <li class="ico-edit"></li>
-              <li class="ico-del"></li>
-              <li class="ico-pin"></li>
-            </ul>
-          </div>
-          <ul class="m-message__status">
-            <li class="active"><a href="#" class="ico-plus">13</a></li>
-            <li class="active"><a href="#" class="ico-minus">4</a></li>
-            <li class="active"><a href="#" class="ico-eq">0</a></li>
-          </ul>
-          <div class="m-message__seen">
-            Просмотрено
-            <span>12</span>
-          </div>
-        </div>
-        <div class="m-message__content-body">
-          <p class="m-content__text">Donec viverra maximus urna, non aliquet sapien posuere sed. Proin ut nisl in
-            velit
-            scelerisque placerat. Aliquam fermentum massa placerat congue vehicula. Nam quis eros id ligula rutrum
-            rutrum non nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos</p>
-          <div class="m-content__snippet">
+            <div class="m-message m-message--snippet">
+
+                <a href="#" class="avatar-l">
+                    <span class="status"></span>
+                    <img class="button-round--image"
+                         src="https://pbs.twimg.com/profile_images/677544618326556672/WID2m1_a.png"
+                         alt="avatar">
+                </a>
+
+                <div class="m-message__content">
+                    <div class="m-message__content-header">
+                        <div class="m-message__sender-status">
+                            <span>Inna Avanesian</span>
+                            в
+                            <time datetime="2017-04-17 12:31">
+                                <span>12:31</span>
+                                17 Апрель 2017
+                            </time>
+                            <ul class="m-message__editer">
+                                <li class="ico-edit"></li>
+                                <li class="ico-del"></li>
+                                <li class="ico-pin"></li>
+                            </ul>
+                        </div>
+                        <ul class="m-message__status">
+                            <li class="active"><a href="#" class="ico-plus">13</a></li>
+                            <li class="active"><a href="#" class="ico-minus">4</a></li>
+                            <li class="active"><a href="#" class="ico-eq">0</a></li>
+                        </ul>
+                        <div class="m-message__seen">
+                            Просмотрено
+                            <span>12</span>
+                        </div>
+                    </div>
+                    <div class="m-message__content-body">
+                        <p class="m-content__text">Donec viverra maximus urna, non aliquet sapien posuere sed. Proin ut
+                            nisl in
+                            velit
+                            scelerisque placerat. Aliquam fermentum massa placerat congue vehicula. Nam quis eros id
+                            ligula rutrum
+                            rutrum non nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                            inceptos</p>
+                        <div class="m-content__snippet">
               <pre>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
@@ -162,56 +183,67 @@
 &lt;/body&gt;
 &lt;/html&gt;
               </pre>
-          </div>
-        </div>
-      </div>
+                        </div>
+                    </div>
+                </div>
 
-    </div>
+            </div>
 
-    <div class="m-message m-message--you">
+            <div class="m-message m-message--you">
 
-      <a href="#" class="avatar-l">
-        <span class="status"></span>
-        <img class="button-round--image" src="https://pbs.twimg.com/profile_images/677544618326556672/WID2m1_a.png"
-             alt="avatar">
-      </a>
+                <a href="#" class="avatar-l">
+                    <span class="status"></span>
+                    <img class="button-round--image"
+                         src="https://pbs.twimg.com/profile_images/677544618326556672/WID2m1_a.png"
+                         alt="avatar">
+                </a>
 
-      <div class="m-message__content">
-        <div class="m-message__content-header">
-          <div class="m-message__sender-status">
-            <span>Вы</span>
-            в
-            <time datetime="2017-04-17 12:31">
-              <span>12:31</span>
-              17 Апрель 2017
-            </time>
-            <ul class="m-message__editer">
-              <li class="ico-edit"></li>
-              <li class="ico-del"></li>
-              <li class="ico-pin"></li>
-            </ul>
-          </div>
-          <ul class="m-message__status">
-            <li><a href="#" class="ico-plus"></a></li>
-            <li><a href="#" class="ico-minus"></a></li>
-            <li><a href="#" class="ico-eq"></a></li>
-          </ul>
-          <div class="m-message__seen">
-            Просмотрено
-            <span>12</span>
-          </div>
-        </div>
-        <div class="m-message__content-body">
-          <p class="m-content__text">Donec viverra maximus urna, non aliquet sapien posuere sed. Proin ut nisl in
-            velit
-            scelerisque placerat. Aliquam fermentum massa placerat congue vehicula. Nam quis eros id ligula rutrum
-            rutrum non nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos</p>
-        </div>
-      </div>
+                <div class="m-message__content">
+                    <div class="m-message__content-header">
+                        <div class="m-message__sender-status">
+                            <span>Вы</span>
+                            в
+                            <time datetime="2017-04-17 12:31">
+                                <span>12:31</span>
+                                17 Апрель 2017
+                            </time>
+                            <ul class="m-message__editer">
+                                <li class="ico-edit"></li>
+                                <li class="ico-del"></li>
+                                <li class="ico-pin"></li>
+                            </ul>
+                        </div>
+                        <ul class="m-message__status">
+                            <li><a href="#" class="ico-plus"></a></li>
+                            <li><a href="#" class="ico-minus"></a></li>
+                            <li><a href="#" class="ico-eq"></a></li>
+                        </ul>
+                        <div class="m-message__seen">
+                            Просмотрено
+                            <span>12</span>
+                        </div>
+                    </div>
+                    <div class="m-message__content-body">
+                        <p class="m-content__text">Donec viverra maximus urna, non aliquet sapien posuere sed. Proin ut
+                            nisl in
+                            velit
+                            scelerisque placerat. Aliquam fermentum massa placerat congue vehicula. Nam quis eros id
+                            ligula rutrum
+                            rutrum non nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                            inceptos</p>
+                    </div>
+                </div>
 
-    </div>
+            </div>
 
-  </section>
+        </main>
+
+        <form class="m-message__send">
+            <textarea name="send" id="send"></textarea>
+            <a href="#" class="circle-button-s">T.</a>
+        </form>
+
+    </section>
 </main>
 <footer class="footer">Footer</footer>
 
