@@ -1,7 +1,10 @@
+@import "mixins";
+@import "var";
+
 .m-main {
   display: grid;
   grid-template-columns: 1fr 25vw;
-  grid-template-areas: "m-main__container aside";
+  grid-template-areas: "m-main__container m-aside";
 
   &__container {
     padding: rem(20);
@@ -13,17 +16,29 @@
   }
 }
 
-.m_aside {
-  grid-area: aside;
+.m-aside {
+  grid-area: m-aside;
+  background-color: #333;
 }
 
 .m-main__container {
   grid-area: m-main__container;
 }
 
-.m-aside {
-  background-color: #333;
+.m-main--left {
+  grid-template-columns: 25vw 1fr;
+  grid-template-areas: "m-aside m-main__container";
 }
+
+.m-main--close {
+  grid-template-columns:1fr;
+  grid-template-areas: "m-main__container";
+
+  .m-aside {
+    display: none;
+  }
+}
+
 
 
 
