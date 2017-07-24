@@ -35,20 +35,28 @@ body {
 
 .m-aside {
   grid-area: m-aside;
-  background-color: #333; }
+  background-color: #333;
+  transition: all 0.3s; }
 
 .m-main__container {
-  grid-area: m-main__container; }
+  grid-area: m-main__container;
+  transition: all 0.3s; }
 
 .m-main--left {
   grid-template-columns: 25vw 1fr;
   grid-template-areas: "m-aside m-main__container"; }
+  .m-main--left.m-main--close .m-main__container {
+    margin-right: initial;
+    margin-left: -25vw; }
+  .m-main--left.m-main--close .m-aside {
+    margin-left: -25vw;
+    margin-right: 25vw; }
 
-.m-main--close {
-  grid-template-columns: 1fr;
-  grid-template-areas: "m-main__container"; }
-  .m-main--close .m-aside {
-    display: none; }
+.m-main--close .m-main__container {
+  margin-right: -25vw; }
+
+.m-main--close .m-aside {
+  margin-left: 25vw; }
 
 /*     ----------------- Typography -------------------     */
 .m-message {
