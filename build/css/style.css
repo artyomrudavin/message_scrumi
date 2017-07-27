@@ -119,10 +119,11 @@ body {
   display: flex;
   margin-bottom: 1.25rem; }
   .m-message .avatar-l {
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     margin-right: 1.4375rem;
     margin-left: 0.3125rem; }
   .m-message__content {
+    flex: 1 0 50vw;
     min-width: 47.14vw;
     box-sizing: border-box;
     position: relative;
@@ -215,6 +216,7 @@ body {
   line-height: 1.2; }
 
 .m-content__text {
+  word-wrap: break-word;
   padding: 0.625rem;
   font-size: 0.875rem; }
 
