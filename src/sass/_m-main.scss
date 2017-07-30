@@ -83,12 +83,37 @@
       font-weight: normal;
     }
 
-    h2 {
-      padding:  rem(10) 0 rem(10) rem(20);
+    h2, h3 {
+      padding: rem(10) 0 rem(10) rem(20);
     }
 
     h3 {
       font-size: rem(12);
+    }
+
+    &__channels {
+      h2 {
+        border-bottom: 1px solid $white;
+        padding: rem(10) 0 rem(10) 0;
+        margin-left: rem(20);
+        position: relative;
+      }
+
+      h3 {
+        position: relative;
+
+        &::after {
+          display: inline-block;
+          content: "";
+          position: absolute;
+          top: rem(10);
+          right: rem(10);
+          width: rem(11);
+          height: rem(11);
+          background: url("../img/add-chan.png") no-repeat;
+          cursor: pointer;
+        }
+      }
     }
 
     .m-member__visit {
@@ -106,6 +131,7 @@
     overflow-x: auto;
     display: flex;
     flex-direction: column;
+    position: relative;
     //transition: all $animation-speed;
 
     li {
@@ -137,8 +163,10 @@
   }
 
   .m-unread {
-    display: inline-block;
-    left: rem(1);
+    display: none;
+    flex: 0 0 auto;
+    position: absolute;
+    left: rem(5);
     width: rem(15);
     height: rem(15);
     line-height: rem(15);
@@ -148,20 +176,36 @@
     color: $white;
     font-size: rem(10);
     border-radius: 50%;
-    margin-right: rem(2);
+
+    &.active {
+      display: inline-block;
+    }
   }
 
   .avatar-s {
+    flex: 0 0 auto;
     margin-right: rem(10);
+    margin-left: rem(17);
   }
 
   .m-channels {
     height: 30vh;
     overflow-x: auto;
+    position: relative;
     //transition: all $animation-speed;
 
     &.hide {
       display: none;
+    }
+
+    ul {
+      border-bottom: 1px solid $white;
+      margin-left: rem(20);
+
+      li {
+        padding: 0 0 rem(5) rem(17);
+      }
+      //padding: rem(5);
     }
 
     &::-webkit-scrollbar-track {

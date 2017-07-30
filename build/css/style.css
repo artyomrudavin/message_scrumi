@@ -72,10 +72,27 @@ body {
     .m-main .m-aside h2, .m-main .m-aside h3 {
       font-size: 0.875rem;
       font-weight: normal; }
-    .m-main .m-aside h2 {
+    .m-main .m-aside h2, .m-main .m-aside h3 {
       padding: 0.625rem 0 0.625rem 1.25rem; }
     .m-main .m-aside h3 {
       font-size: 0.75rem; }
+    .m-main .m-aside__channels h2 {
+      border-bottom: 1px solid #fff;
+      padding: 0.625rem 0 0.625rem 0;
+      margin-left: 1.25rem;
+      position: relative; }
+    .m-main .m-aside__channels h3 {
+      position: relative; }
+      .m-main .m-aside__channels h3::after {
+        display: inline-block;
+        content: "";
+        position: absolute;
+        top: 0.625rem;
+        right: 0.625rem;
+        width: 0.6875rem;
+        height: 0.6875rem;
+        background: url("../img/add-chan.png") no-repeat;
+        cursor: pointer; }
     .m-main .m-aside .m-member__visit {
       font-size: 0.6875rem;
       color: #ccc; }
@@ -85,7 +102,8 @@ body {
     height: 30vh;
     overflow-x: auto;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    position: relative; }
     .m-main .m-members li {
       display: flex;
       flex: 0 0 auto;
@@ -104,8 +122,10 @@ body {
       border-radius: 0.625rem;
       box-shadow: inset 0 0 0 0.125rem #fff; }
   .m-main .m-unread {
-    display: inline-block;
-    left: 0.0625rem;
+    display: none;
+    flex: 0 0 auto;
+    position: absolute;
+    left: 0.3125rem;
     width: 0.9375rem;
     height: 0.9375rem;
     line-height: 0.9375rem;
@@ -114,15 +134,24 @@ body {
     vertical-align: middle;
     color: #fff;
     font-size: 0.625rem;
-    border-radius: 50%;
-    margin-right: 0.125rem; }
+    border-radius: 50%; }
+    .m-main .m-unread.active {
+      display: inline-block; }
   .m-main .avatar-s {
-    margin-right: 0.625rem; }
+    flex: 0 0 auto;
+    margin-right: 0.625rem;
+    margin-left: 1.0625rem; }
   .m-main .m-channels {
     height: 30vh;
-    overflow-x: auto; }
+    overflow-x: auto;
+    position: relative; }
     .m-main .m-channels.hide {
       display: none; }
+    .m-main .m-channels ul {
+      border-bottom: 1px solid #fff;
+      margin-left: 1.25rem; }
+      .m-main .m-channels ul li {
+        padding: 0 0 0.3125rem 1.0625rem; }
     .m-main .m-channels::-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 0.3125rem #fff;
       background-color: #f7f7f7; }
