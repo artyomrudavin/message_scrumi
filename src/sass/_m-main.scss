@@ -1,0 +1,344 @@
+@import "mixins";
+@import "var";
+
+.m-main {
+  display: grid;
+  overflow: hidden;
+
+  &__container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "m-main__header" "m-message__container" "m-message__send";
+    grid-area: m-main__container;
+    margin-right: -25vw;
+    padding-right: 0;
+    overflow: auto;
+    transition: all $animation-speed;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .m-aside {
+    grid-area: m-aside;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "m-aside__tabs" "m-aside__container";
+    background-color: #333;
+    transition: all $animation-speed;
+    font-size: rem(12);
+    color: $white;
+    overflow: auto;
+
+    &__tabs {
+      grid-area: m-aside__tabs;
+      display: flex;
+
+      li {
+        width: rem(50);
+        height: rem(50);
+        margin: 0 rem(5);
+        border-radius: 50%;
+        text-align: center;
+        box-shadow: 0 rem(1) 0 0 rgba($white, .07), inset 0 rem(1) rem(1) 0 rgba($black, .5);
+
+        &:hover {
+          background-color: $gray-25;
+
+          .m-members__ico, .m-pinned__ico, .m-docs__ico {
+            fill: $gray-80;
+          }
+        }
+
+        &.active {
+          box-shadow: 0 rem(1) rem(1) 0 rgba($black, .3), inset 0 rem(1) rem(1) 0 rgba($white, .24);
+
+          .m-members__ico, .m-pinned__ico, .m-docs__ico {
+            fill: $green;
+          }
+
+          &:hover {
+            .m-members__ico, .m-pinned__ico, .m-docs__ico {
+              fill: $green-light;
+            }
+          }
+        }
+
+        svg {
+          fill: $gray-50;
+        }
+      }
+
+    }
+
+    &__container {
+      grid-area: m-aside__container;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h2, h3 {
+      font-size: rem(14);
+      font-weight: normal;
+    }
+
+    h2 {
+      padding:  rem(10) 0 rem(10) rem(20);
+    }
+
+    h3 {
+      font-size: rem(12);
+    }
+
+    .m-member__visit {
+      font-size: rem(11);
+      color: #ccc;
+
+      time {
+        color: $white;
+      }
+    }
+  }
+
+  .m-members {
+    height: 30vh;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    //transition: all $animation-speed;
+
+    li {
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+      padding: rem(8) 0 rem(8) rem(5);
+    }
+
+    &.hide {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 rem(5) $white;
+      background-color: $gray-97;
+    }
+
+    &::-webkit-scrollbar {
+      width: rem(10);
+      background-color: $gray-60;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $blue;
+      border-radius: rem(10);
+      box-shadow: inset 0 0 0 rem(2) $white;
+    }
+  }
+
+  .m-unread {
+    display: inline-block;
+    left: rem(1);
+    width: rem(15);
+    height: rem(15);
+    line-height: rem(15);
+    background-color: $red;
+    text-align: center;
+    vertical-align: middle;
+    color: $white;
+    font-size: rem(10);
+    border-radius: 50%;
+    margin-right: rem(2);
+  }
+
+  .avatar-s {
+    margin-right: rem(10);
+  }
+
+  .m-channels {
+    height: 30vh;
+    overflow-x: auto;
+    //transition: all $animation-speed;
+
+    &.hide {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 rem(5) $white;
+      background-color: $gray-97;
+    }
+
+    &::-webkit-scrollbar {
+      width: rem(10);
+      background-color: $gray-60;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $blue;
+      border-radius: rem(10);
+      box-shadow: inset 0 0 0 rem(2) $white;
+    }
+  }
+
+  .m-main__header, .m-message__container, .m-message__send {
+    padding: rem(20) rem(110);
+  }
+
+  .m-message__container {
+    padding-bottom: 0;
+  }
+
+  &.m-main--right {
+    grid-template-columns: 1fr 25vw;
+    grid-template-areas: "m-main__container m-aside";
+
+    .m-aside {
+      margin-left: 25vw;
+
+      &__tabs {
+        padding: rem(10) 0 rem(10) rem(25);
+      }
+
+      &__container {
+        padding: 0 rem(110) rem(20) 0;
+      }
+    }
+
+    &.active {
+      .m-main__container {
+        margin-right: 0;
+        padding-right: rem(20);
+      }
+
+      .m-aside {
+        margin-left: 0;
+      }
+
+      .m-main__header, .m-message__container, .m-message__send {
+        padding: rem(20) 0 rem(20) rem(110);
+      }
+
+      .m-message__container {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &.m-main--left {
+    grid-template-columns: 25vw 1fr;
+    grid-template-areas: "m-aside m-main__container";
+    margin-left: -25vw;
+
+    .m-main__container {
+      margin-right: 0;
+    }
+
+    .m-aside {
+      margin-right: 25vw;
+
+      &__tabs {
+        justify-content: flex-end;
+        padding: rem(10) rem(25) rem(10) 0;
+      }
+
+      &__container {
+        padding: 0 0 rem(20) rem(110);
+      }
+
+      &__members {
+        padding-right: rem(5);
+      }
+
+      &__channels {
+        padding-right: rem(5);
+      }
+    }
+
+    &.active {
+      .m-main__container {
+        margin-left: 25vw;
+        padding-left: rem(20);
+      }
+
+      .m-aside {
+        margin-right: -25vw;
+        margin-left: 25vw;
+      }
+
+      .m-main__header, .m-message__container, .m-message__send {
+        padding: rem(20) rem(110) rem(20) 0;
+      }
+
+      .m-message__container {
+        padding-bottom: 0;
+      }
+
+      .m-main__header {
+        padding-left: rem(70);
+
+        a {
+          left: 0;
+        }
+      }
+    }
+  }
+
+}
+
+.m-main__header {
+  grid-area: m-main__header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid $gray-80;
+  box-shadow: 0 rem(1) 0 $white;
+
+  a {
+    content: "";
+    position: absolute;
+    left: rem(10);
+    background: url('../img/sprite.png') no-repeat -1px -143px;
+    width: 13px;
+    height: 12px;
+  }
+
+  .m-header__heading span {
+    color: $gray-50;
+  }
+}
+
+.m-message__container {
+  grid-area: m-message__container;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.m-main__header, .m-message__container, .m-message__send {
+  padding: rem(20) 0 rem(20) rem(110);
+  box-sizing: border-box;
+}
+
+.m-message__send {
+  grid-area: m-message__send;
+  display: flex;
+  align-items: center;
+
+  textarea {
+    width: 100%;
+    height: rem(50);
+  }
+
+  a {
+    line-height: rem(22);
+    color: $fc-gray-main;
+    font-weight: bold;
+    font-size: rem(14);
+    right: rem(10);
+    margin-left: rem(-22);
+  }
+}
